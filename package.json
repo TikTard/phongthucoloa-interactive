@@ -1,0 +1,27 @@
+{
+  "name": "giu-thanh-co-loa",
+  "version": "1.0.0",
+  "description": "TikTok LIVE interactive tower defense game (pixel art)",
+  "private": true,
+  "type": "module",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "art": "powershell -ExecutionPolicy Bypass -File art/build-art.ps1 && python art/build-pixel.py",
+    "pfx": "node art/build-pfx.mjs",
+    "pixel": "python art/build-pixel.py",
+    "tts": "node server/tts-warm.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fontsource/bungee": "^5.3.0",
+    "@fontsource/vt323": "^5.3.0",
+    "express": "^5.3.0",
+    "msedge-tts": "^2.1.1",
+    "phaser": "^3.90.0",
+    "tiktok-live-connector": "^2.5.0",
+    "ws": "^8.23.0"
+  }
+}

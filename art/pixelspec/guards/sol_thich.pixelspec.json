@@ -1,0 +1,1191 @@
+{
+ "schema": "codeart2d.pixelspec.v1",
+ "name": "sol_thich",
+ "canvas": [
+  32,
+  32
+ ],
+ "anchor_px": [
+  16,
+  31
+ ],
+ "palette": {
+  "k": "#241622",
+  "q": "#b8735a",
+  "s": "#e3a27f",
+  "S": "#f6cfac",
+  "h": "#2b1d2a",
+  "x": "#3e2a22",
+  "y": "#6a4630",
+  "z": "#94673f",
+  "w": "#cdbfa6",
+  "W": "#f4ecd8",
+  "e": "#a4acc0",
+  "E": "#e0e6f0",
+  "n": "#3e2a22",
+  "m": "#6a4630",
+  "p": "#6a3a9a",
+  "P": "#a878e0"
+ },
+ "variants": {
+  "1": {},
+  "2": {
+   "x": "#1e2340",
+   "y": "#2f3a6e",
+   "z": "#4a64a8",
+   "w": "#6a7088",
+   "W": "#a4acc0",
+   "n": "#1e2340",
+   "m": "#2f3a6e"
+  },
+  "3": {
+   "x": "#6e1e24",
+   "y": "#a8322e",
+   "z": "#d8553a",
+   "w": "#a8701e",
+   "W": "#e0a838",
+   "n": "#6e1e24",
+   "m": "#a8701e"
+  }
+ },
+ "outline": {
+  "mode": "solid",
+  "color": "k"
+ },
+ "poses": {
+  "head": [
+   "...yyyyyy...",
+   ".yyzzzzyyyy.",
+   "yzzzzyyyyyyy",
+   "yzzyyyyyyyyy",
+   "yyyyyyyyyyyy",
+   "yyyyyxxxxxxx",
+   "yyyxsShESShS",
+   "yyyxsShhSShs",
+   "yyxzzzzzzzzx",
+   ".yxyyyyyyyx.",
+   "..xyyyyyyy.."
+  ],
+  "head_fierce": [
+   "...yyyyyy...",
+   ".yyzzzzyyyy.",
+   "yzzzzyyyyyyy",
+   "yzzyyyyyyyyy",
+   "yyyyyyyyyyyy",
+   "yyyyyxxxxxxx",
+   "yyyxsxhExSxS",
+   "yyyxsShhSShs",
+   "yyxzzzzzzzzx",
+   ".yxyyyyyyyx.",
+   "..xyyyyyyy.."
+  ],
+  "tail": [
+   ".........",
+   "......yy.",
+   "....yyyy.",
+   "...yy....",
+   ".........",
+   ".........",
+   ".........",
+   "......xxx",
+   "...xxxxx.",
+   ".xxx....."
+  ],
+  "tail_b": [
+   ".........",
+   "......yy.",
+   "....yyyy.",
+   "...yy....",
+   ".........",
+   ".........",
+   ".........",
+   "......xxx",
+   "....xxxx.",
+   "..xxx....",
+   ".xx......"
+  ],
+  "tail_fly": [
+   ".........",
+   "......yy.",
+   "..yyyyyy.",
+   ".........",
+   ".........",
+   ".........",
+   ".........",
+   ".xxxxxxxx",
+   "...xxxx.."
+  ],
+  "torso": [
+   "..yyyyyy..",
+   ".zyyyyyyy.",
+   ".zyywwyyx.",
+   ".yyyywwyx.",
+   ".wWWWWWWw.",
+   ".zyyyyyyx.",
+   ".zyyyyyxx.",
+   "..yyyxxx.."
+  ],
+  "legs_crouch": [
+   "....yyyyyyy...",
+   "...xxyyyyyyyy.",
+   "..xxx.....yyy.",
+   ".xxx......yyy.",
+   ".nnn......mmm.",
+   ".nnnn.....mmmm"
+  ],
+  "legs_cpass_a": [
+   "....yyyyyy....",
+   "....xxyyyyyy..",
+   "....xxx..yyy..",
+   "....xxx..mmm..",
+   "....nnn..mmmm.",
+   "....nnnn......"
+  ],
+  "legs_ccontact_b": [
+   "....yyyyyyy...",
+   "..yyyyyyxxxx..",
+   "..yyy.....xxx.",
+   ".yyy......xxx.",
+   ".mmm......nnn.",
+   ".mmmm.....nnnn"
+  ],
+  "legs_cpass_b": [
+   "....yyyyyy....",
+   "...xxxxyyy....",
+   "..xxx..yyy....",
+   "..nnn..yyy....",
+   "..nnnn.mmm....",
+   ".......mmmm..."
+  ],
+  "legs_lunge": [
+   "....yyyyyyyy..",
+   "..xxxx...yyyy.",
+   ".xxx......yyy.",
+   "xxx.......yyy.",
+   "nn........mmm.",
+   "nn........mmmm"
+  ],
+  "legs_stand": [
+   "....yyyyyy....",
+   "....xxyyyy....",
+   "....xxxyyy....",
+   "....xxx.yyy...",
+   "....xxx.yyy...",
+   "....nnn.mmm...",
+   "....nnn.mmmm..",
+   "....nnn.mmmm.."
+  ],
+  "arm_back": [
+   ".x",
+   "xx",
+   "xx",
+   "qq"
+  ],
+  "dagger_back": [
+   "...ww",
+   "..Ee.",
+   ".Ee..",
+   ".E..."
+  ],
+  "arm_back_swing": [
+   "..xxx",
+   "xxxx.",
+   "qq..."
+  ],
+  "dagger_back_swing": [
+   "...w",
+   "EEEw",
+   "eeew"
+  ],
+  "arm_idle": [
+   "yy...",
+   "yyyy.",
+   "zywss",
+   ".ywqs"
+  ],
+  "dagger": [
+   "w...",
+   "wEEE",
+   "wee."
+  ],
+  "arm_pull": [
+   "..wss",
+   "yywqs",
+   "zyy..",
+   "yy..."
+  ],
+  "arm_stab": [
+   "yy....",
+   "zyyyws",
+   "yyyywq"
+  ],
+  "dagger_stab": [
+   "w....",
+   "wEEEE",
+   "weee."
+  ],
+  "arm_cross": [
+   "...ss",
+   "...qs",
+   "..ww.",
+   ".yyy.",
+   "zyy..",
+   "yy..."
+  ],
+  "dagger_up": [
+   ".E.",
+   "Ee.",
+   "Ee.",
+   "www"
+  ],
+  "arm_back_cross": [
+   "qq..",
+   "xxx.",
+   ".xxx",
+   "..xx"
+  ],
+  "dagger_upfwd": [
+   "...E",
+   "..Ee",
+   ".Ee.",
+   "ww.."
+  ],
+  "streak": [
+   "..EEEEE",
+   ".......",
+   ".......",
+   ".......",
+   ".......",
+   "...EEEE"
+  ],
+  "spark": [
+   ".E.",
+   "EEE",
+   ".E."
+  ],
+  "smoke": [
+   ".pPp................pPp..",
+   "pPPPp.pp.......pp..pPPPp.",
+   ".ppp..pp.......pp...ppp.."
+  ]
+ },
+ "layers": [
+  {
+   "name": "dagger_back",
+   "z": 0,
+   "origin": [
+    6,
+    23
+   ],
+   "rows": "dagger_back"
+  },
+  {
+   "name": "arm_back",
+   "z": 1,
+   "origin": [
+    10,
+    19
+   ],
+   "rows": "arm_back"
+  },
+  {
+   "name": "tail",
+   "z": 2,
+   "origin": [
+    2,
+    7
+   ],
+   "rows": "tail"
+  },
+  {
+   "name": "legs",
+   "z": 3,
+   "origin": [
+    9,
+    24
+   ],
+   "rows": "legs_crouch"
+  },
+  {
+   "name": "torso",
+   "z": 4,
+   "origin": [
+    11,
+    18
+   ],
+   "rows": "torso"
+  },
+  {
+   "name": "head",
+   "z": 5,
+   "origin": [
+    10,
+    7
+   ],
+   "rows": "head"
+  },
+  {
+   "name": "dagger",
+   "z": 6,
+   "origin": [
+    24,
+    20
+   ],
+   "rows": "dagger"
+  },
+  {
+   "name": "arm",
+   "z": 7,
+   "origin": [
+    19,
+    19
+   ],
+   "rows": "arm_idle"
+  },
+  {
+   "name": "fx",
+   "z": 9,
+   "origin": [
+    22,
+    18
+   ],
+   "rows": "streak"
+  }
+ ],
+ "frames": [
+  {
+   "name": "idle0",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back"
+    },
+    "arm_back": {
+     "rows": "arm_back"
+    },
+    "tail": {
+     "rows": "tail"
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso"
+    },
+    "head": {
+     "rows": "head"
+    },
+    "dagger": {
+     "rows": "dagger"
+    },
+    "arm": {
+     "rows": "arm_idle"
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "idle1",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back"
+    },
+    "arm_back": {
+     "rows": "arm_back"
+    },
+    "tail": {
+     "rows": "tail_b",
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso"
+    },
+    "head": {
+     "rows": "head",
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger"
+    },
+    "arm": {
+     "rows": "arm_idle"
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "idle2",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dy": 1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dy": 1
+    },
+    "tail": {
+     "rows": "tail_b",
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": 1
+    },
+    "head": {
+     "rows": "head",
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dy": 1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dy": 1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "idle3",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dy": 1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dy": 1
+    },
+    "tail": {
+     "rows": "tail",
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso"
+    },
+    "head": {
+     "rows": "head",
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dy": 1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dy": 1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "walk0",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": -1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": -1
+    },
+    "tail": {
+     "rows": "tail_b"
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso"
+    },
+    "head": {
+     "rows": "head"
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": 1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dx": 1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "walk1",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dy": -1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dy": -1
+    },
+    "tail": {
+     "rows": "tail",
+     "dy": -1
+    },
+    "legs": {
+     "rows": "legs_cpass_a"
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": -1
+    },
+    "head": {
+     "rows": "head",
+     "dy": -1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dy": -1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dy": -1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "walk2",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": 1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": 1
+    },
+    "tail": {
+     "rows": "tail_b"
+    },
+    "legs": {
+     "rows": "legs_ccontact_b"
+    },
+    "torso": {
+     "rows": "torso"
+    },
+    "head": {
+     "rows": "head"
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": -1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dx": -1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "walk3",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dy": -1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dy": -1
+    },
+    "tail": {
+     "rows": "tail",
+     "dy": -1
+    },
+    "legs": {
+     "rows": "legs_cpass_b"
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": -1
+    },
+    "head": {
+     "rows": "head",
+     "dy": -1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dy": -1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dy": -1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "atk0",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": -2,
+     "dy": 1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": -2,
+     "dy": 1
+    },
+    "tail": {
+     "rows": "tail",
+     "dx": -2,
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": -2,
+     "dy": 1
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": -2,
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": -2,
+     "dy": 1
+    },
+    "arm": {
+     "rows": "arm_pull",
+     "dx": -2,
+     "dy": 1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "atk1",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back_swing",
+     "dx": -4,
+     "dy": -1
+    },
+    "arm_back": {
+     "rows": "arm_back_swing",
+     "dx": -4,
+     "dy": 1
+    },
+    "tail": {
+     "rows": "tail_fly",
+     "dx": 2
+    },
+    "legs": {
+     "rows": "legs_lunge"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": 2
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": 2
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": 3
+    },
+    "arm": {
+     "rows": "arm_stab",
+     "dx": 2
+    },
+    "fx": {
+     "rows": "streak"
+    }
+   }
+  },
+  {
+   "name": "atk2",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back_swing",
+     "dx": -4
+    },
+    "arm_back": {
+     "rows": "arm_back_swing",
+     "dx": -4,
+     "dy": 2
+    },
+    "tail": {
+     "rows": "tail_fly",
+     "dx": 2,
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_lunge"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": 2,
+     "dy": 1
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": 2,
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": 3,
+     "dy": 1
+    },
+    "arm": {
+     "rows": "arm_stab",
+     "dx": 2,
+     "dy": 1
+    },
+    "fx": {
+     "rows": "spark",
+     "dx": 6
+    }
+   }
+  },
+  {
+   "name": "atk3",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dy": 1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dy": 1
+    },
+    "tail": {
+     "rows": "tail",
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": 1
+    },
+    "head": {
+     "rows": "head",
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dy": 1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dy": 1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "cast0",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dy": 1
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dy": 1
+    },
+    "tail": {
+     "rows": "tail",
+     "dy": 1
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": 1
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dy": 1
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dy": 1
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "cast1",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back_swing",
+     "dx": -4,
+     "dy": -3
+    },
+    "arm_back": {
+     "rows": "arm_back_swing",
+     "dx": -4,
+     "dy": -1
+    },
+    "tail": {
+     "rows": "tail",
+     "dy": -2
+    },
+    "legs": {
+     "rows": "legs_stand",
+     "dy": -2
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": -2
+    },
+    "head": {
+     "rows": "head",
+     "dy": -2
+    },
+    "dagger": {
+     "rows": "dagger_up",
+     "dx": -3,
+     "dy": -12
+    },
+    "arm": {
+     "rows": "arm_cross",
+     "dy": -7
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "cast2",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back_swing",
+     "dx": -4,
+     "dy": -3
+    },
+    "arm_back": {
+     "rows": "arm_back_swing",
+     "dx": -4,
+     "dy": -1
+    },
+    "tail": {
+     "rows": "tail_b",
+     "dy": -2
+    },
+    "legs": {
+     "rows": "legs_stand",
+     "dy": -2
+    },
+    "torso": {
+     "rows": "torso",
+     "dy": -2
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dy": -2
+    },
+    "dagger": {
+     "rows": "dagger_up",
+     "dx": -3,
+     "dy": -12
+    },
+    "arm": {
+     "rows": "arm_cross",
+     "dy": -7
+    },
+    "fx": {
+     "rows": "smoke",
+     "dx": -19,
+     "dy": 9
+    }
+   }
+  },
+  {
+   "name": "hurt0",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": -1,
+     "dy": 0
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": -1,
+     "dy": 0
+    },
+    "tail": {
+     "rows": "tail",
+     "dx": -1,
+     "dy": 0
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": -1,
+     "dy": 0
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": -2,
+     "dy": 1
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": -1,
+     "dy": 0
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dx": -1,
+     "dy": 0
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "hurt1",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": -1,
+     "dy": 0
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": -1,
+     "dy": 0
+    },
+    "tail": {
+     "rows": "tail",
+     "dx": -1,
+     "dy": 0
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": -1,
+     "dy": 0
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": -1,
+     "dy": 0
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": -1,
+     "dy": 0
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dx": -1,
+     "dy": 0
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "ko0",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": -1,
+     "dy": 2
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": -1,
+     "dy": 2
+    },
+    "tail": {
+     "rows": "tail",
+     "dx": -1,
+     "dy": 2
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": -1,
+     "dy": 2
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": -2,
+     "dy": 3
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": -1,
+     "dy": 2
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dx": -1,
+     "dy": 2
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  },
+  {
+   "name": "ko1",
+   "layers": {
+    "dagger_back": {
+     "rows": "dagger_back",
+     "dx": -1,
+     "dy": 4
+    },
+    "arm_back": {
+     "rows": "arm_back",
+     "dx": -1,
+     "dy": 4
+    },
+    "tail": {
+     "rows": "tail",
+     "dx": -1,
+     "dy": 4
+    },
+    "legs": {
+     "rows": "legs_crouch"
+    },
+    "torso": {
+     "rows": "torso",
+     "dx": -1,
+     "dy": 4
+    },
+    "head": {
+     "rows": "head_fierce",
+     "dx": -2,
+     "dy": 5
+    },
+    "dagger": {
+     "rows": "dagger",
+     "dx": -1,
+     "dy": 4
+    },
+    "arm": {
+     "rows": "arm_idle",
+     "dx": -1,
+     "dy": 4
+    },
+    "fx": {
+     "hidden": true
+    }
+   }
+  }
+ ],
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle0",
+    "idle1",
+    "idle2",
+    "idle3"
+   ],
+   "duration_ms": 167,
+   "loop": true
+  },
+  "walk": {
+   "frames": [
+    "walk0",
+    "walk1",
+    "walk2",
+    "walk3"
+   ],
+   "duration_ms": 100,
+   "loop": true
+  },
+  "attack": {
+   "frames": [
+    "atk0",
+    "atk1",
+    "atk2",
+    "atk3"
+   ],
+   "duration_ms": 71,
+   "loop": false
+  },
+  "cast": {
+   "frames": [
+    "cast0",
+    "cast1",
+    "cast2"
+   ],
+   "duration_ms": 125,
+   "loop": false
+  },
+  "hurt": {
+   "frames": [
+    "hurt0",
+    "hurt1",
+    "hurt1"
+   ],
+   "duration_ms": 70,
+   "loop": false
+  },
+  "ko": {
+   "frames": [
+    "ko0",
+    "ko1"
+   ],
+   "duration_ms": 140,
+   "loop": false
+  }
+ }
+}

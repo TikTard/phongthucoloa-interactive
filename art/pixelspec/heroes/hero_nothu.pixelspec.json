@@ -1,0 +1,314 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "hero_nothu",
+  "canvas": [48, 48],
+  "anchor_px": [24, 46],
+  "palette": {
+    "k": "#241622",
+    "S": "#b8735a",
+    "s": "#e3a27f",
+    "f": "#f6cfac",
+    "h": "#2b1d2a",
+    "H": "#45304a",
+    "w": "#f4ecd8",
+    "q": "#94673f",
+    "c": "#cdbfa6",
+    "C": "#f4ecd8",
+    "m": "#3e2a22",
+    "n": "#6a4630",
+    "N": "#94673f",
+    "t": "#6a4630",
+    "T": "#94673f",
+    "b": "#6a4630",
+    "B": "#94673f"
+  },
+  "variants": {
+    "1": {"q": "#94673f", "c": "#cdbfa6", "C": "#f4ecd8", "m": "#3e2a22", "n": "#6a4630", "N": "#94673f", "t": "#6a4630", "T": "#94673f"},
+    "2": {"q": "#1f3f3a", "c": "#2f6b55", "C": "#4f9a72", "m": "#3e2a22", "n": "#94673f", "N": "#c4955e", "t": "#94673f", "T": "#c4955e"},
+    "3": {"q": "#1e2340", "c": "#2f3a6e", "C": "#4a64a8", "m": "#3a3e52", "n": "#6a7088", "N": "#a4acc0", "t": "#a4acc0", "T": "#e0e6f0"},
+    "4": {"q": "#6e1e24", "c": "#a8322e", "C": "#d8553a", "m": "#6a7088", "n": "#a4acc0", "N": "#e0e6f0", "t": "#a8701e", "T": "#e0a838"},
+    "5": {"q": "#a8322e", "c": "#d8553a", "C": "#f08a5a", "m": "#a8701e", "n": "#e0a838", "N": "#f8dc7a", "t": "#e0a838", "T": "#f8dc7a"}
+  },
+  "outline": {"mode": "solid", "color": "k"},
+  "poses": {
+    "tassel_a": [".TT.", "tTTt"],
+    "tassel_b": ["TT..", "tTTt"],
+    "core": [
+      "......NNNnnnm.......",
+      "....NNNNNnnnnmm.....",
+      "...NNNNNNnnnnmmm....",
+      "..nNNNNNNnnnnnmmm...",
+      "..nNNNNNnnnnnnmmm...",
+      ".tTTTTTTTTtttttttt..",
+      "mmnnnnnnnnnnnnnnnmmm",
+      "..nNnSSSSSSSSSSSS...",
+      "..nNnsfhhhfffhhfs...",
+      "..nNnsffhhfffhhss...",
+      "..nNnSffhwfffhwsss..",
+      "..mnmSffHHffsHHsS...",
+      "...msssffffsHHHH....",
+      "....SssssssHhhHsS...",
+      "......SSssHhHH......",
+      "....qcCSSSSSScq.....",
+      ".cCCnNNNNNnnnnmmcq..",
+      "cCCCnNNNNNnnnnmmcq..",
+      "cCCCmmmmmmmmmmmmcq..",
+      "cCCCnNNNNNnnnnmmcq..",
+      "qcCCnNNNNnnnnnmmcq..",
+      "qcCCmmmmmmmmmmmmcq..",
+      ".qcCnNNNNnnnnnmmq...",
+      ".tTTTTTTTTTTttttt...",
+      ".tttttttttTTTtttt...",
+      "cCCCnNNNNnmccqqq....",
+      "cCCCnNNNNnmccqqq....",
+      "qCCCnNNNNnmccqqq....",
+      "qqccmmmmmmmqqqqq...."
+    ],
+    "legs": [
+      ".qqqqq.CCcccq...",
+      ".qqqqq.CCcccq...",
+      ".qqqqq.CCcccq...",
+      ".qqqqq.Cccccq...",
+      ".mnnnm.nNNNnm...",
+      ".mnnnm.nNNNnm...",
+      ".mnnnm.nNNNnm...",
+      ".mnnnm.nNNNnm...",
+      ".bBBBb.bBBBBb...",
+      "bBBBBb.bBBBBBbb.",
+      "bbbbbb.bbbbbbbbb"
+    ],
+    "xbow": [
+      "..................Bb....",
+      ".................w.Bb...",
+      "................w..Bb...",
+      "...............w....Bb..",
+      "..............w.....Bb..",
+      "Bb....wwwwwwwwwwwwwwBbw.",
+      "BBBBBBBBBBBBBBBBBBBB..ww",
+      "bbbbbbbbbbbbbbbbbbbb....",
+      "bb........hh........Bb..",
+      "..........h...w.....Bb..",
+      "...............w...Bb...",
+      "................w..Bb...",
+      ".................wBb...."
+    ],
+    "xbow_aim": [
+      "....................Bb....",
+      "...................w.Bb...",
+      "..................w..Bb...",
+      ".................w....Bb..",
+      "................w.....Bb..",
+      "Bb....wwwwwwwwwwwwwwwwBbw.",
+      "BBBBBBBBBBBBBBBBBBBBBB..ww",
+      "bbbbbbbbbbbbbbbbbbbbbb....",
+      "bb.........hh.........Bb..",
+      "...........h....w.....Bb..",
+      ".................w...Bb...",
+      "..................w..Bb...",
+      "...................wBb...."
+    ],
+    "xbow_shot": [
+      ".....................Bb.",
+      "....................wBb.",
+      "....................w.Bb",
+      "....................w.Bb",
+      "....................w.Bb",
+      "Bb..................w.Bb",
+      "BBBBBBBBBBBBBBBBBBBBBB..",
+      "bbbbbbbbbbbbbbbbbbbbbb..",
+      "bb.........hh.......w.Bb",
+      "...........h........w.Bb",
+      "....................w.Bb",
+      "....................wBb.",
+      ".....................Bb."
+    ],
+    "xbow_rest": [
+      "...................Bb.",
+      "..................wBb.",
+      "..................w.Bb",
+      "..................w.Bb",
+      "..................w.Bb",
+      "Bb................w.Bb",
+      "BBBBBBBBBBBBBBBBBBBB..",
+      "bbbbbbbbbbbbbbbbbbbb..",
+      "bb........hh......w.Bb",
+      "..........h.......w.Bb",
+      "..................w.Bb",
+      "..................wBb.",
+      "...................Bb."
+    ],
+    "near": [
+      ".NNNnm.....",
+      "nNNNnm.....",
+      "mnnnmm.....",
+      "cCCcq......",
+      "cCCcq......",
+      "cCcqq......",
+      "cqqnNNNNnfs",
+      "qqmnnnnnmsS"
+    ],
+    "near_aim": [
+      ".NNNnm....",
+      "nNNNnm....",
+      "mnnnmm....",
+      "cCCcq.nfss",
+      "cCcnNNnsSs",
+      "qcnNnm....",
+      ".mnm......"
+    ],
+    "farm": ["cq..", "cqq.", "qqm.", ".nnm", ".nnm", ".ssS", "..sS"],
+    "farm_aim": ["cqq..", "qqnnm", ".mnnm", "..fss", "..sSS"],
+    "fx_shot": [
+      ".......ww.....",
+      "........ww....",
+      "..............",
+      "..............",
+      "..............",
+      "wwww...BBBwwww",
+      "..www.........",
+      "..............",
+      "..............",
+      "..............",
+      "........ww....",
+      ".......ww....."
+    ],
+    "fx_trail": ["....BB", "BBBwww"]
+  },
+  "layers": [
+    {
+      "name": "farm",
+      "z": 1,
+      "origin": [33, 23],
+      "rows": "farm"
+    },
+    {
+      "name": "legs",
+      "z": 2,
+      "origin": [16, 35],
+      "rows": "legs"
+    },
+    {
+      "name": "core",
+      "z": 3,
+      "origin": [16, 6],
+      "rows": "core"
+    },
+    {
+      "name": "tassel",
+      "z": 3,
+      "origin": [23, 4],
+      "rows": "tassel_a"
+    },
+    {
+      "name": "xbow",
+      "z": 4,
+      "origin": [19, 24],
+      "rows": "xbow"
+    },
+    {
+      "name": "near",
+      "z": 5,
+      "origin": [17, 22],
+      "rows": "near"
+    },
+    {
+      "name": "fx",
+      "z": 6,
+      "origin": [32, 16],
+      "rows": "fx_shot"
+    }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "layers": {
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_1",
+      "layers": {
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "tassel": {"dy": 1},
+        "xbow": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_2",
+      "layers": {
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "tassel": {"rows": "tassel_b", "dy": 1},
+        "xbow": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_3",
+      "layers": {
+        "tassel": {"rows": "tassel_b"},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_0",
+      "layers": {
+        "farm": {"rows": "farm_aim", "dx": -1},
+        "core": {"dy": 1},
+        "tassel": {"dy": 1},
+        "xbow": {"rows": "xbow_aim", "dx": -3, "dy": -6},
+        "near": {"rows": "near_aim", "dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_1",
+      "layers": {
+        "farm": {"rows": "farm_aim", "dx": -2, "dy": -1},
+        "core": {"dx": -1},
+        "tassel": {"rows": "tassel_b", "dx": -1},
+        "xbow": {"rows": "xbow_shot", "dx": -4, "dy": -8},
+        "near": {"rows": "near_aim", "dx": -1}
+      }
+    },
+    {
+      "name": "attack_2",
+      "layers": {
+        "farm": {"rows": "farm_aim", "dx": -2, "dy": -1},
+        "core": {"dx": -1},
+        "tassel": {"rows": "tassel_b", "dx": -1},
+        "xbow": {"rows": "xbow_shot", "dx": -4, "dy": -7},
+        "near": {"rows": "near_aim", "dx": -1},
+        "fx": {"rows": "fx_trail", "dx": 9, "dy": 5}
+      }
+    },
+    {
+      "name": "attack_3",
+      "layers": {
+        "xbow": {"rows": "xbow_rest"},
+        "fx": {"hidden": true}
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": ["idle_0", "idle_1", "idle_2", "idle_3"],
+      "duration_ms": 200,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "attack_0",
+        "attack_1",
+        "attack_2",
+        "attack_3"
+      ],
+      "duration_ms": [110, 70, 80, 90],
+      "loop": false
+    }
+  }
+}

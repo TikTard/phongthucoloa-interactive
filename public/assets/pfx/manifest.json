@@ -1,0 +1,795 @@
+{
+ "hitspark": {
+  "id": "impacts/hit-spark",
+  "w": 136,
+  "h": 80,
+  "frames": 9,
+  "cols": 3,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   44,
+   64
+  ]
+ },
+ "crit": {
+  "id": "impacts/crit-hit",
+  "w": 216,
+  "h": 136,
+  "frames": 17,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   84,
+   106
+  ]
+ },
+ "zap": {
+  "id": "lightning/zap-hit",
+  "w": 144,
+  "h": 112,
+  "frames": 18,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   76,
+   56
+  ]
+ },
+ "snowburst": {
+  "id": "ice/snowflake-burst",
+  "w": 140,
+  "h": 120,
+  "frames": 62,
+  "cols": 8,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   70,
+   106
+  ]
+ },
+ "boom": {
+  "id": "explosions/small-explosion",
+  "w": 300,
+  "h": 240,
+  "frames": 102,
+  "cols": 10,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   150,
+   196
+  ]
+ },
+ "slash": {
+  "id": "melee/spin-slash",
+  "w": 208,
+  "h": 104,
+  "frames": 15,
+  "cols": 3,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   104,
+   84
+  ]
+ },
+ "poof": {
+  "id": "spawn/poof",
+  "w": 112,
+  "h": 92,
+  "frames": 28,
+  "cols": 5,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   56,
+   80
+  ]
+ },
+ "portal": {
+  "id": "spawn/spawn-portal",
+  "w": 208,
+  "h": 150,
+  "frames": 72,
+  "cols": 8,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   104,
+   122
+  ]
+ },
+ "darkboom": {
+  "id": "shadow/dark-explosion",
+  "w": 280,
+  "h": 248,
+  "frames": 75,
+  "cols": 9,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   140,
+   206
+  ]
+ },
+ "strike": {
+  "id": "lightning/lightning-strike",
+  "w": 240,
+  "h": 264,
+  "frames": 59,
+  "cols": 9,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   120,
+   228
+  ]
+ },
+ "frostnova": {
+  "id": "ice/frost-nova",
+  "w": 288,
+  "h": 192,
+  "frames": 66,
+  "cols": 7,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   144,
+   150
+  ]
+ },
+ "healaoe": {
+  "id": "holy/heal-aoe",
+  "w": 256,
+  "h": 136,
+  "frames": 57,
+  "cols": 6,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   128,
+   104
+  ]
+ },
+ "pillar": {
+  "id": "holy/holy-pillar",
+  "w": 192,
+  "h": 232,
+  "frames": 68,
+  "cols": 10,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   96,
+   204
+  ]
+ },
+ "slam": {
+  "id": "impacts/ground-slam",
+  "w": 288,
+  "h": 208,
+  "frames": 60,
+  "cols": 7,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   144,
+   164
+  ]
+ },
+ "circle": {
+  "id": "arcane/magic-circle-cast",
+  "w": 200,
+  "h": 220,
+  "frames": 71,
+  "cols": 9,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   100,
+   192
+  ]
+ },
+ "collect": {
+  "id": "pickups/collect-burst",
+  "w": 112,
+  "h": 108,
+  "frames": 22,
+  "cols": 5,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   56,
+   94
+  ]
+ },
+ "firework": {
+  "id": "explosions/firework-burst",
+  "w": 240,
+  "h": 248,
+  "frames": 61,
+  "cols": 8,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   120,
+   100
+  ]
+ },
+ "firework2": {
+  "id": "explosions/firework-burst",
+  "w": 240,
+  "h": 248,
+  "frames": 62,
+  "cols": 9,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   120,
+   100
+  ]
+ },
+ "chest": {
+  "id": "pickups/chest-open",
+  "w": 176,
+  "h": 112,
+  "frames": 87,
+  "cols": 8,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   88,
+   96
+  ]
+ },
+ "thrust": {
+  "id": "melee/thrust",
+  "w": 196,
+  "h": 76,
+  "frames": 13,
+  "cols": 3,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   34,
+   62
+  ]
+ },
+ "shieldblock": {
+  "id": "impacts/shield-block",
+  "w": 148,
+  "h": 104,
+  "frames": 21,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   40,
+   88
+  ]
+ },
+ "starfall": {
+  "id": "arcane/star-fall",
+  "w": 232,
+  "h": 172,
+  "frames": 45,
+  "cols": 6,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   124,
+   150
+  ]
+ },
+ "heal1": {
+  "id": "holy/heal",
+  "w": 80,
+  "h": 104,
+  "frames": 35,
+  "cols": 7,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   40,
+   92
+  ]
+ },
+ "wave": {
+  "id": "water/wave-crash",
+  "w": 224,
+  "h": 104,
+  "frames": 61,
+  "cols": 6,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   112,
+   86
+  ]
+ },
+ "geyser": {
+  "id": "water/geyser",
+  "w": 184,
+  "h": 168,
+  "frames": 96,
+  "cols": 10,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   92,
+   146
+  ]
+ },
+ "roots": {
+  "id": "nature/root-snare",
+  "w": 128,
+  "h": 96,
+  "frames": 53,
+  "cols": 7,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   64,
+   78
+  ]
+ },
+ "thorns": {
+  "id": "nature/thorns",
+  "w": 232,
+  "h": 92,
+  "frames": 47,
+  "cols": 5,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   48,
+   78
+  ]
+ },
+ "poison": {
+  "id": "nature/poison-cloud",
+  "w": 256,
+  "h": 100,
+  "frames": 80,
+  "cols": 6,
+  "fps": 20,
+  "loop": true,
+  "pivot": [
+   128,
+   86
+  ]
+ },
+ "charm": {
+  "id": "status/charmed",
+  "w": 60,
+  "h": 76,
+  "frames": 48,
+  "cols": 8,
+  "fps": 20,
+  "loop": true,
+  "pivot": [
+   30,
+   68
+  ]
+ },
+ "fireball": {
+  "id": "fire/fireball",
+  "w": 136,
+  "h": 56,
+  "frames": 24,
+  "cols": 4,
+  "fps": 20,
+  "loop": true,
+  "pivot": [
+   112,
+   28
+  ]
+ },
+ "icelance": {
+  "id": "ice/ice-lance",
+  "w": 176,
+  "h": 64,
+  "frames": 16,
+  "cols": 3,
+  "fps": 20,
+  "loop": true,
+  "pivot": [
+   146,
+   32
+  ]
+ },
+ "brazier": {
+  "id": "fire/brazier",
+  "w": 112,
+  "h": 148,
+  "frames": 36,
+  "cols": 7,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   56,
+   136
+  ]
+ },
+ "butterfly": {
+  "id": "critters/butterfly",
+  "w": 128,
+  "h": 88,
+  "frames": 38,
+  "cols": 6,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   64,
+   44
+  ]
+ },
+ "ripples": {
+  "id": "water/ripples",
+  "w": 136,
+  "h": 52,
+  "frames": 24,
+  "cols": 4,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   68,
+   30
+  ]
+ },
+ "rift": {
+  "id": "arcane/portal",
+  "w": 152,
+  "h": 116,
+  "frames": 29,
+  "cols": 5,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   76,
+   106
+  ]
+ },
+ "petals": {
+  "id": "weather/cherry-blossoms",
+  "w": 320,
+  "h": 180,
+  "frames": 120,
+  "cols": 9,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "godrays": {
+  "id": "weather/god-rays",
+  "w": 320,
+  "h": 180,
+  "frames": 100,
+  "cols": 8,
+  "fps": 10,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "leaves": {
+  "id": "weather/falling-leaves",
+  "w": 320,
+  "h": 180,
+  "frames": 120,
+  "cols": 9,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "leaves_green": {
+  "id": "weather/falling-leaves",
+  "w": 320,
+  "h": 180,
+  "frames": 120,
+  "cols": 9,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "snowfall": {
+  "id": "weather/snow",
+  "w": 320,
+  "h": 180,
+  "frames": 144,
+  "cols": 9,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "fog": {
+  "id": "weather/fog",
+  "w": 320,
+  "h": 180,
+  "frames": 120,
+  "cols": 9,
+  "fps": 10,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "fireflies": {
+  "id": "weather/fireflies",
+  "w": 320,
+  "h": 180,
+  "frames": 144,
+  "cols": 9,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   160,
+   170
+  ]
+ },
+ "wisp": {
+  "id": "critters/wisp",
+  "w": 128,
+  "h": 104,
+  "frames": 38,
+  "cols": 6,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   64,
+   96
+  ]
+ },
+ "parry": {
+  "id": "impacts/parry",
+  "w": 200,
+  "h": 112,
+  "frames": 17,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   100,
+   96
+  ]
+ },
+ "coindrop": {
+  "id": "spawn/coin-drop",
+  "w": 160,
+  "h": 88,
+  "frames": 61,
+  "cols": 6,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   80,
+   78
+  ]
+ },
+ "blunt": {
+  "id": "impacts/blunt-hit",
+  "w": 128,
+  "h": 88,
+  "frames": 17,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   64,
+   72
+  ]
+ },
+ "landing": {
+  "id": "impacts/heavy-landing",
+  "w": 176,
+  "h": 80,
+  "frames": 30,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   88,
+   60
+  ]
+ },
+ "muzzle": {
+  "id": "projectiles/muzzle-shotgun",
+  "w": 160,
+  "h": 88,
+  "frames": 63,
+  "cols": 6,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   44,
+   82
+  ]
+ },
+ "stunned": {
+  "id": "status/stunned",
+  "w": 60,
+  "h": 64,
+  "frames": 24,
+  "cols": 6,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   30,
+   56
+  ]
+ },
+ "divshield": {
+  "id": "holy/divine-shield",
+  "w": 88,
+  "h": 84,
+  "frames": 29,
+  "cols": 6,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   44,
+   68
+  ]
+ },
+ "countdown": {
+  "id": "ui/countdown",
+  "w": 152,
+  "h": 136,
+  "frames": 61,
+  "cols": 8,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   76,
+   68
+  ]
+ },
+ "combo2": {
+  "id": "ui/combo-counter",
+  "w": 208,
+  "h": 100,
+  "frames": 28,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   104,
+   50
+  ]
+ },
+ "combo3": {
+  "id": "ui/combo-counter",
+  "w": 208,
+  "h": 100,
+  "frames": 28,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   104,
+   50
+  ]
+ },
+ "combo5": {
+  "id": "ui/combo-counter",
+  "w": 208,
+  "h": 100,
+  "frames": 28,
+  "cols": 4,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   104,
+   50
+  ]
+ },
+ "flamepillar": {
+  "id": "fire/flame-pillar",
+  "w": 184,
+  "h": 256,
+  "frames": 88,
+  "cols": 12,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   92,
+   232
+  ]
+ },
+ "meteor": {
+  "id": "fire/meteor",
+  "w": 272,
+  "h": 232,
+  "frames": 96,
+  "cols": 10,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   150,
+   208
+  ]
+ },
+ "firering": {
+  "id": "fire/fire-ring",
+  "w": 224,
+  "h": 128,
+  "frames": 72,
+  "cols": 7,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   112,
+   92
+  ]
+ },
+ "firetornado": {
+  "id": "fire/fire-tornado",
+  "w": 120,
+  "h": 152,
+  "frames": 24,
+  "cols": 6,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   60,
+   136
+  ]
+ },
+ "campfire": {
+  "id": "fire/campfire",
+  "w": 128,
+  "h": 128,
+  "frames": 36,
+  "cols": 6,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   64,
+   112
+  ]
+ },
+ "torch": {
+  "id": "fire/torch",
+  "w": 72,
+  "h": 120,
+  "frames": 24,
+  "cols": 7,
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+   36,
+   94
+  ]
+ },
+ "pow": {
+  "id": "explosions/cartoon-pow",
+  "w": 184,
+  "h": 144,
+  "frames": 21,
+  "cols": 5,
+  "fps": 20,
+  "loop": false,
+  "pivot": [
+   92,
+   72
+  ]
+ }
+}

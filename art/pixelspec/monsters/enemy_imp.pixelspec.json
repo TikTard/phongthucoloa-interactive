@@ -1,0 +1,256 @@
+{
+ "schema": "codeart2d.pixelspec.v1",
+ "name": "enemy_imp",
+ "canvas": [
+  32,
+  32
+ ],
+ "anchor_px": [
+  16,
+  29
+ ],
+ "palette": {
+  "k": "#241622",
+  "d": "#4a1020",
+  "r": "#8a2030",
+  "R": "#c84040",
+  "p": "#f07860",
+  "b": "#5a4a3a",
+  "h": "#a89478",
+  "H": "#e8dcc0",
+  "y": "#ffe25a",
+  "Y": "#fff8c0",
+  "w": "#5a3e2a",
+  "W": "#8a6440",
+  "s": "#6a7088",
+  "S": "#e0e6f0",
+  "l": "#3a1f4e",
+  "L": "#6a3a9a"
+ },
+ "variants": {
+  "_": {},
+  "ice": {
+   "d": "#3a3e52",
+   "r": "#2a5a8a",
+   "R": "#5ab0e0",
+   "p": "#bff0ff",
+   "l": "#16364a",
+   "L": "#266e74"
+  },
+  "poison": {
+   "d": "#1f3f3a",
+   "r": "#3a5a1a",
+   "R": "#7aa030",
+   "p": "#c8e060"
+  }
+ },
+ "outline": {
+  "mode": "solid",
+  "color": "k"
+ },
+ "poses": {
+  "head": [
+   "H........H....",
+   ".hH.......hH..",
+   "..hb.......hb.",
+   "...pppppppprr.",
+   "..ppRRRRRRRRr.",
+   ".ppRRRRRRRRRRr",
+   "rRRRRRRRddddRr",
+   ".rRRRRRRRYYdRR",
+   "..rRRRRRRRRRRR",
+   "..rRRRRRdddddd",
+   "...rRRRRHddHd.",
+   "....rrrrrrrr.."
+  ],
+  "body": [
+   "..pRRRRr.....",
+   ".pRRRRRRRr...",
+   "dpRRRRRRRRRp.",
+   "drRRRRRRRrpRR",
+   "ddRRpppRr.rRr",
+   ".drRRRRrr....",
+   "..lLLLlll....",
+   "..lLLLlll....",
+   "...lLll......"
+  ],
+  "spear": [
+   ".........SS",
+   ".......sSSS",
+   ".....WWsSs.",
+   "...WW......",
+   ".ww........"
+  ],
+  "butt": [
+   ".....ww",
+   "...ww..",
+   ".ww....",
+   "w......"
+  ],
+  "legs_ca": [
+   "....rRRR.....",
+   "...rrRRRr....",
+   "..rd...pRr...",
+   "..rd....Rr...",
+   ".rd.....pRr..",
+   ".rd......Rr..",
+   "rd.......pRR.",
+   "rdd......RRRr"
+  ],
+  "legs_pa": [
+   "....rRRR....",
+   "....rRRRr...",
+   "...rrpRr....",
+   "..rrd.Rr....",
+   ".rd...pRr...",
+   ".d....pRr...",
+   "......pRr...",
+   "......pRRRr."
+  ],
+  "legs_cb": [
+   "....rRRR.....",
+   "...pRrrr.....",
+   "..pR...rd....",
+   "..pR....rd...",
+   ".pR.....rd...",
+   ".pR......rd..",
+   "pR.......rd..",
+   "RR.......rddd"
+  ],
+  "legs_pb": [
+   "....rRRR....",
+   "....pRRrr...",
+   "...pRr.rd...",
+   "..pRr..rd...",
+   ".RRr...rd...",
+   ".Rr....rd...",
+   ".......rd...",
+   ".......rddd."
+  ]
+ },
+ "layers": [
+  {
+   "name": "legs",
+   "z": 0,
+   "origin": [
+    10,
+    20
+   ],
+   "rows": "legs_ca"
+  },
+  {
+   "name": "body",
+   "z": 1,
+   "origin": [
+    10,
+    13
+   ],
+   "rows": "body"
+  },
+  {
+   "name": "butt",
+   "z": 0,
+   "origin": [
+    8,
+    17
+   ],
+   "rows": "butt"
+  },
+  {
+   "name": "head",
+   "z": 2,
+   "origin": [
+    8,
+    2
+   ],
+   "rows": "head"
+  },
+  {
+   "name": "spear",
+   "z": 3,
+   "origin": [
+    20,
+    11
+   ],
+   "rows": "spear"
+  }
+ ],
+ "frames": [
+  {
+   "name": "walk_0",
+   "layers": {
+    "legs": {
+     "rows": "legs_ca"
+    }
+   }
+  },
+  {
+   "name": "walk_1",
+   "layers": {
+    "legs": {
+     "rows": "legs_pa"
+    },
+    "body": {
+     "dy": -1
+    },
+    "head": {
+     "dy": -1
+    },
+    "spear": {
+     "dy": -1
+    },
+    "butt": {
+     "dy": -1
+    }
+   }
+  },
+  {
+   "name": "walk_2",
+   "layers": {
+    "legs": {
+     "rows": "legs_cb"
+    },
+    "spear": {
+     "dx": -1
+    },
+    "butt": {
+     "dx": -1
+    }
+   }
+  },
+  {
+   "name": "walk_3",
+   "layers": {
+    "legs": {
+     "rows": "legs_pb"
+    },
+    "body": {
+     "dy": -1
+    },
+    "head": {
+     "dy": -1
+    },
+    "spear": {
+     "dy": -1,
+     "dx": -1
+    },
+    "butt": {
+     "dy": -1,
+     "dx": -1
+    }
+   }
+  }
+ ],
+ "clips": {
+  "walk": {
+   "frames": [
+    "walk_0",
+    "walk_1",
+    "walk_2",
+    "walk_3"
+   ],
+   "duration_ms": 167,
+   "loop": true
+  }
+ }
+}

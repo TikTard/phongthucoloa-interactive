@@ -1,0 +1,358 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "hero_hoasu",
+  "canvas": [48, 48],
+  "anchor_px": [24, 46],
+  "palette": {
+    "k": "#241622",
+    "S": "#b8735a",
+    "s": "#e3a27f",
+    "f": "#f6cfac",
+    "h": "#2b1d2a",
+    "H": "#45304a",
+    "w": "#f4ecd8",
+    "q": "#94673f",
+    "c": "#cdbfa6",
+    "C": "#f4ecd8",
+    "m": "#3e2a22",
+    "n": "#6a4630",
+    "N": "#94673f",
+    "t": "#6a4630",
+    "T": "#94673f",
+    "b": "#6a4630",
+    "r": "#e05a20",
+    "o": "#ffb040",
+    "Y": "#fff0a0"
+  },
+  "variants": {
+    "1": {"q": "#94673f", "c": "#cdbfa6", "C": "#f4ecd8", "m": "#3e2a22", "n": "#6a4630", "N": "#94673f", "t": "#6a4630", "T": "#94673f"},
+    "2": {"q": "#1f3f3a", "c": "#2f6b55", "C": "#4f9a72", "m": "#3e2a22", "n": "#94673f", "N": "#c4955e", "t": "#94673f", "T": "#c4955e"},
+    "3": {"q": "#1e2340", "c": "#2f3a6e", "C": "#4a64a8", "m": "#3a3e52", "n": "#6a7088", "N": "#a4acc0", "t": "#a4acc0", "T": "#e0e6f0"},
+    "4": {"q": "#6e1e24", "c": "#a8322e", "C": "#d8553a", "m": "#6a7088", "n": "#a4acc0", "N": "#e0e6f0", "t": "#a8701e", "T": "#e0a838"},
+    "5": {"q": "#a8322e", "c": "#d8553a", "C": "#f08a5a", "m": "#a8701e", "n": "#e0a838", "N": "#f8dc7a", "t": "#e0a838", "T": "#f8dc7a"}
+  },
+  "outline": {"mode": "solid", "color": "k"},
+  "poses": {
+    "core": [
+      "..........Yo......",
+      ".......hHHro......",
+      "......hHHHhr......",
+      "......tTTTt.......",
+      "....hHHHHHHhhh....",
+      "..hHHHHHHHHhhhhh..",
+      ".hHHHHHHHHHhhhhhh.",
+      ".hhHHHhhhhhhhhhhh.",
+      ".hhhhhhSfhhsfSSh..",
+      ".hhHhhffffsssssss.",
+      "..hHhsfhhhfffhhfs.",
+      "..hhSsffhhfffhhss.",
+      "..hhSSffhwfffhwsss",
+      "..hSsSffHHffsHHsS.",
+      "...hsssffffsssss..",
+      "....SsssssssSSsS..",
+      ".....SSssssssS....",
+      "...nNNSSSSSNnn....",
+      ".nNNNNNnnnnnnnn...",
+      "nNNNNNNnnnnnnnnq..",
+      "nnnNNNnnnnnnnnnq..",
+      ".cCCCCCccccTccqq..",
+      ".cCCCCCccccTccqq..",
+      ".cCCCCcccccTccqq..",
+      ".tTTTTTTTTTttttt..",
+      ".ttttttttttttttt.."
+    ],
+    "legs": [
+      "...cCCCCCccccTcqqq..",
+      "..cCCCCCcccccTcqqq..",
+      "..cCCCCCcccccTcqqq..",
+      "..cCCCCccccccTcqqq..",
+      ".cCCCCCccccccTcqqqq.",
+      ".cCCCCCccccccTcqqqq.",
+      ".cCCCCcccccccTcqqqq.",
+      ".cCCCCcccccccTcqqqq.",
+      "cCCCCCcccccccTcqqqqq",
+      "cCCCCCcccccccTcqqqqq",
+      "cCCCCccccccccTcqqqqq",
+      "tTTTTTTTTTTTTTtttttt",
+      "tttttttttttttttttttt",
+      "....bSSb..bSSSb.....",
+      "...bSSSb..bSSSSb....",
+      "...bbbbbb.bbbbbbb..."
+    ],
+    "sash_a": ["TTt.", ".Tt.", ".Tt.", ".Tt.", "..Tt"],
+    "sash_b": ["TTt..", ".Tt..", "..Tt.", "..Tt.", "...Tt"],
+    "near": [
+      "..cCCCc..",
+      "..cCCCcq.",
+      ".cCCCCcq.",
+      ".cCCCCcq.",
+      ".cCCCCcq.",
+      "cCCCCCcq.",
+      "cCCCCCcq.",
+      "cCCCCccq.",
+      "tTTTTTtfs",
+      ".......sS"
+    ],
+    "near_b": [
+      "...cCCCc..",
+      "...cCCCcq.",
+      "..cCCCCcq.",
+      "..cCCCCcq.",
+      ".cCCCCCcq.",
+      ".cCCCCCcq.",
+      "cCCCCCccq.",
+      "cCCCCCccq.",
+      "tTTTTTTtfs",
+      "........sS"
+    ],
+    "near_charge": [
+      ".rr...........",
+      "roor....cCCCc.",
+      "oYYo..cCCCCCcq",
+      "roorcCCCCCCcq.",
+      ".fstTCCCCcq...",
+      ".sStTcccccq...",
+      "......qcccq..."
+    ],
+    "near_thrust": [
+      ".cCCCCCCCCcq....",
+      "cCCCCCCCCCcqtTfs",
+      "qccccccccccqttsS",
+      ".qccccccccq.....",
+      "..qcccccq.......",
+      "....qqq........."
+    ],
+    "farm": [
+      "cq.....",
+      "cqq....",
+      ".cqq...",
+      ".cqqfss",
+      ".tt.sSS"
+    ],
+    "staff": ["nNNnn", ".nnnn", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb.", "..Sb."],
+    "flame_a": ["...r..", "..rr..", ".ror..", ".roYr.", "roYYr.", "roYYor", ".rooor"],
+    "flame_b": ["..r...", "..rr..", "..ror.", ".roYor", "roYYor", "roYYor", ".rooor"],
+    "flame_big": [
+      "...r..r.",
+      "..rr.rr.",
+      "..rorror",
+      ".roYYor.",
+      ".roYYYor",
+      "roYYYYor",
+      "roYYYYor",
+      ".rooooor"
+    ],
+    "fx_burst": [
+      "......rr.....",
+      "....r.ror.r..",
+      "...rrooorr.r.",
+      "..rooYYoorr..",
+      ".roYYYYYoor..",
+      ".oYYYYYYYorr.",
+      "roYYYYYYYoor.",
+      "oYYYYYYYYoorr",
+      "roYYYYYYYoor.",
+      ".oYYYYYYYor..",
+      ".roYYYYYoor..",
+      "..rooYYoorr..",
+      "...rrooorr.r.",
+      "....r.ror.r..",
+      "......rr....."
+    ],
+    "fx_fade": [
+      ".......r...",
+      ".....rrr...",
+      "...rroorr..",
+      "..rooooorr.",
+      ".rooooooor.",
+      ".rooooooorr",
+      "roooooooorr",
+      ".rooooooorr",
+      ".rooooooor.",
+      "..rooooorr.",
+      "...rroorr..",
+      ".....rrr...",
+      ".......r..."
+    ],
+    "fx_ember": [
+      "...rr..",
+      "....r..",
+      ".......",
+      ".......",
+      "or.....",
+      ".......",
+      ".......",
+      ".....rr",
+      "......r"
+    ],
+    "back_a": [
+      ".....tTT",
+      "...tTT..",
+      "..tT....",
+      ".tT.....",
+      ".tT.....",
+      "tT......",
+      "t......."
+    ],
+    "back_b": [
+      ".......tTT",
+      ".....tTT..",
+      "....tT....",
+      "...tT.....",
+      "..tT......",
+      ".tT.......",
+      "t........."
+    ]
+  },
+  "layers": [
+    {
+      "name": "back",
+      "z": 0,
+      "origin": [14, 7],
+      "rows": "back_a"
+    },
+    {
+      "name": "farm",
+      "z": 1,
+      "origin": [31, 24],
+      "rows": "farm"
+    },
+    {
+      "name": "staff",
+      "z": 1,
+      "origin": [34, 9],
+      "rows": "staff"
+    },
+    {
+      "name": "flame",
+      "z": 1,
+      "origin": [34, 2],
+      "rows": "flame_a"
+    },
+    {
+      "name": "legs",
+      "z": 2,
+      "origin": [14, 30],
+      "rows": "legs"
+    },
+    {
+      "name": "core",
+      "z": 3,
+      "origin": [16, 4],
+      "rows": "core"
+    },
+    {
+      "name": "sash",
+      "z": 4,
+      "origin": [28, 28],
+      "rows": "sash_a"
+    },
+    {
+      "name": "near",
+      "z": 5,
+      "origin": [16, 24],
+      "rows": "near"
+    },
+    {
+      "name": "fx",
+      "z": 6,
+      "origin": [34, 16],
+      "rows": "fx_burst"
+    }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "layers": {
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_1",
+      "layers": {
+        "back": {"dy": 1},
+        "farm": {"dy": 1},
+        "flame": {"rows": "flame_b"},
+        "core": {"dy": 1},
+        "sash": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_2",
+      "layers": {
+        "back": {"rows": "back_b", "dx": -2, "dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "sash": {"rows": "sash_b", "dy": 1},
+        "near": {"rows": "near_b", "dx": -1, "dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_3",
+      "layers": {
+        "back": {"rows": "back_b", "dx": -2},
+        "flame": {"rows": "flame_b"},
+        "sash": {"rows": "sash_b"},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_0",
+      "layers": {
+        "back": {"rows": "back_b", "dx": -3},
+        "flame": {"rows": "flame_big", "dx": -1, "dy": -1},
+        "core": {"dx": -1},
+        "sash": {"rows": "sash_b", "dx": -1},
+        "near": {"rows": "near_charge", "dx": -6, "dy": -1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_1",
+      "layers": {
+        "back": {"dx": 1},
+        "core": {"dx": 1},
+        "sash": {"dx": 1},
+        "near": {"rows": "near_thrust", "dx": 3, "dy": -2}
+      }
+    },
+    {
+      "name": "attack_2",
+      "layers": {
+        "back": {"rows": "back_b", "dx": -1},
+        "flame": {"rows": "flame_b"},
+        "core": {"dx": 1},
+        "sash": {"rows": "sash_b", "dx": 1},
+        "near": {"rows": "near_thrust", "dx": 3, "dy": -2},
+        "fx": {"rows": "fx_fade", "dx": 1}
+      }
+    },
+    {
+      "name": "attack_3",
+      "layers": {
+        "near": {"rows": "near_b", "dx": -1},
+        "fx": {"rows": "fx_ember", "dx": 4}
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": ["idle_0", "idle_1", "idle_2", "idle_3"],
+      "duration_ms": 200,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "attack_0",
+        "attack_1",
+        "attack_2",
+        "attack_3"
+      ],
+      "duration_ms": [110, 70, 80, 90],
+      "loop": false
+    }
+  }
+}

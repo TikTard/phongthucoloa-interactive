@@ -1,0 +1,297 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "hero_vosu",
+  "canvas": [48, 48],
+  "anchor_px": [24, 46],
+  "palette": {
+    "k": "#241622",
+    "S": "#b8735a",
+    "s": "#e3a27f",
+    "f": "#f6cfac",
+    "h": "#2b1d2a",
+    "H": "#45304a",
+    "w": "#f4ecd8",
+    "q": "#94673f",
+    "c": "#cdbfa6",
+    "C": "#f4ecd8",
+    "m": "#3e2a22",
+    "n": "#6a4630",
+    "N": "#94673f",
+    "t": "#6a4630",
+    "T": "#94673f",
+    "r": "#d8553a",
+    "R": "#a8322e",
+    "o": "#ffb040",
+    "Y": "#fff0a0"
+  },
+  "variants": {
+    "1": {"q": "#94673f", "c": "#cdbfa6", "C": "#f4ecd8", "m": "#3e2a22", "n": "#6a4630", "N": "#94673f", "t": "#6a4630", "T": "#94673f"},
+    "2": {"q": "#1f3f3a", "c": "#2f6b55", "C": "#4f9a72", "m": "#3e2a22", "n": "#94673f", "N": "#c4955e", "t": "#94673f", "T": "#c4955e"},
+    "3": {"q": "#1e2340", "c": "#2f3a6e", "C": "#4a64a8", "m": "#3a3e52", "n": "#6a7088", "N": "#a4acc0", "t": "#a4acc0", "T": "#e0e6f0"},
+    "4": {"q": "#6e1e24", "c": "#a8322e", "C": "#d8553a", "m": "#6a7088", "n": "#a4acc0", "N": "#e0e6f0", "t": "#a8701e", "T": "#e0a838"},
+    "5": {"q": "#a8322e", "c": "#d8553a", "C": "#f08a5a", "m": "#a8701e", "n": "#e0a838", "N": "#f8dc7a", "t": "#e0a838", "T": "#f8dc7a"}
+  },
+  "outline": {"mode": "solid", "color": "k"},
+  "poses": {
+    "core": [
+      ".....hh...hh.....",
+      "....hHhhhHh......",
+      "..hHHhHHHhhh.....",
+      ".hHHHhHHHHhhhh...",
+      "hHHHHHHHHHhhhhh..",
+      "RrrrrrrrrrrRRRRR.",
+      "hRrrrrrrrrRRRRR..",
+      "hhHhhffffsssssss.",
+      ".hHhsfhhhfffhhfs.",
+      ".hhSsffhhfffhhss.",
+      ".hhSSffhwfffhwsss",
+      ".hSsSffHHffsHHsS.",
+      "..hsssffffsssss..",
+      "...SsssssswwsS...",
+      "....SSssssssS....",
+      "..cCCSssssScq....",
+      "cCCCSffffSccqq...",
+      "cCCCsfffsSccqq...",
+      "cCCCssSssSccqq...",
+      "cCCCssSsssccqq...",
+      "cCCCsssssccqqq...",
+      "tTTTTTTTTTtttt...",
+      "tttttttttttttt..."
+    ],
+    "legs": [
+      "......qqccccqcCCCccq....",
+      ".....qqccccq.cCCCCcqq...",
+      ".....qqcccq...cCCCCcqq..",
+      "....qqcccq.....cCCCcqq..",
+      "....qqcccq......cCCCcqq.",
+      "...qqcccq.......cCCCcqq.",
+      "...qqcccq.......cCccqq..",
+      "...mnnnm........nNNNm...",
+      "..mnnnm.........nNNNm...",
+      "..mnnnm.........nNNNm...",
+      "..mnnnm.........nNNNm...",
+      ".mnnnm..........nNNNm...",
+      ".mnnnm..........nNNNm...",
+      ".mnnnm..........nNNNm...",
+      ".sSSS...........fsssS...",
+      "fssssS..........fssssSS.",
+      "SSSSSSS.........SSSSSSSS"
+    ],
+    "sash_a": ["TTt.", ".Tt.", ".Tt.", "..Tt"],
+    "sash_b": ["TTt..", ".Tt..", "..Tt.", "...Tt"],
+    "tails_a": [
+      "....rRRR",
+      "..rRR.Rr",
+      ".rR..Rr.",
+      "rr..Rr..",
+      "...rr..."
+    ],
+    "tails_b": ["rr....", ".rRRRR", "...rRR", ".rRr..", "rr...."],
+    "near": [
+      "........fss",
+      "sffs...sfsS",
+      "ffsS...nNS.",
+      ".fssS.fsS..",
+      "..fssfsS...",
+      "..fssssS...",
+      "...fssS....",
+      "...SsS....."
+    ],
+    "near_chamber": [
+      "....sffs",
+      "...ffsS.",
+      "..fssS..",
+      "..fsSS..",
+      ".nNmm...",
+      "fsnNm...",
+      "sSSS...."
+    ],
+    "near_strike": [
+      "............fss.",
+      "sfffffffnNNNfssS",
+      "ssssssssnNNmsssS",
+      "SSSSSSSSmmmmSSS."
+    ],
+    "farm": [
+      "......sfS",
+      "...nmnssS",
+      "sSSSnmSSS",
+      "SSS......"
+    ],
+    "farm_back": ["sSS.", "SSnm", ".nmS"],
+    "fx_hit": [
+      "YY..........YY",
+      "YY..........YY",
+      "......ooo.....",
+      "....ooYYYoo...",
+      "...oYYYYYYYo..",
+      "..oYYYYYYYYYo.",
+      "..oYYYwwwYYYo.",
+      ".oYYYwwwwwYYYo",
+      ".oYYYwwwwwYYYo",
+      ".oYYYwwwwwYYYo",
+      "..oYYYwwwYYYo.",
+      "..oYYYYYYYYYo.",
+      "...oYYYYYYYo..",
+      "....ooYYYoo...",
+      "......ooo.....",
+      "YY..........YY",
+      "YY..........YY"
+    ],
+    "fx_ring": [
+      "....ooo....",
+      "..ooooooo..",
+      ".ooooooooo.",
+      ".oooYYYooo.",
+      "oooYYYYYooo",
+      "oooYYYYYooo",
+      "oooYYYYYooo",
+      ".oooYYYooo.",
+      ".ooooooooo.",
+      "..ooooooo..",
+      "....ooo...."
+    ]
+  },
+  "layers": [
+    {
+      "name": "tails",
+      "z": 0,
+      "origin": [9, 11],
+      "rows": "tails_a"
+    },
+    {
+      "name": "farm",
+      "z": 1,
+      "origin": [29, 20],
+      "rows": "farm"
+    },
+    {
+      "name": "legs",
+      "z": 2,
+      "origin": [11, 29],
+      "rows": "legs"
+    },
+    {
+      "name": "core",
+      "z": 3,
+      "origin": [17, 6],
+      "rows": "core"
+    },
+    {
+      "name": "sash",
+      "z": 4,
+      "origin": [28, 27],
+      "rows": "sash_a"
+    },
+    {
+      "name": "near",
+      "z": 5,
+      "origin": [18, 20],
+      "rows": "near"
+    },
+    {
+      "name": "fx",
+      "z": 6,
+      "origin": [33, 13],
+      "rows": "fx_hit"
+    }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "layers": {
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_1",
+      "layers": {
+        "tails": {"rows": "tails_b", "dx": 2},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "sash": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_2",
+      "layers": {
+        "tails": {"dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "sash": {"rows": "sash_b", "dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_3",
+      "layers": {
+        "tails": {"rows": "tails_b", "dx": 2, "dy": -1},
+        "sash": {"rows": "sash_b"},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_0",
+      "layers": {
+        "tails": {"rows": "tails_b", "dx": 1},
+        "farm": {"dx": -1, "dy": 1},
+        "core": {"dx": -1, "dy": 1},
+        "sash": {"rows": "sash_b", "dx": -1, "dy": 1},
+        "near": {"rows": "near_chamber", "dx": -4, "dy": 2},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_1",
+      "layers": {
+        "tails": {"dx": 2},
+        "farm": {"rows": "farm_back", "dx": 3, "dy": 1},
+        "core": {"dx": 2},
+        "sash": {"rows": "sash_b", "dx": 2},
+        "near": {"rows": "near_strike", "dx": 2}
+      }
+    },
+    {
+      "name": "attack_2",
+      "layers": {
+        "tails": {"rows": "tails_b", "dx": 4, "dy": -1},
+        "farm": {"rows": "farm_back", "dx": 3, "dy": 1},
+        "core": {"dx": 2},
+        "sash": {"dx": 2},
+        "near": {"rows": "near_strike", "dx": 2},
+        "fx": {"rows": "fx_ring", "dx": 2, "dy": 3}
+      }
+    },
+    {
+      "name": "attack_3",
+      "layers": {
+        "tails": {"dx": 1},
+        "farm": {"dx": 1},
+        "core": {"dx": 1},
+        "sash": {"dx": 1},
+        "near": {"dx": 1},
+        "fx": {"hidden": true}
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": ["idle_0", "idle_1", "idle_2", "idle_3"],
+      "duration_ms": 200,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "attack_0",
+        "attack_1",
+        "attack_2",
+        "attack_3"
+      ],
+      "duration_ms": [110, 70, 80, 90],
+      "loop": false
+    }
+  }
+}

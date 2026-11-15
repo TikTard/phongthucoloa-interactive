@@ -1,0 +1,311 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "hero_luongy",
+  "canvas": [48, 48],
+  "anchor_px": [24, 46],
+  "palette": {
+    "k": "#241622",
+    "S": "#b8735a",
+    "s": "#e3a27f",
+    "f": "#f6cfac",
+    "h": "#2b1d2a",
+    "H": "#45304a",
+    "w": "#f4ecd8",
+    "q": "#94673f",
+    "c": "#cdbfa6",
+    "C": "#f4ecd8",
+    "m": "#3e2a22",
+    "n": "#6a4630",
+    "N": "#94673f",
+    "t": "#6a4630",
+    "T": "#94673f",
+    "b": "#94673f",
+    "y": "#cdbfa6",
+    "j": "#5ad08a",
+    "J": "#c8ffd8"
+  },
+  "variants": {
+    "1": {"q": "#94673f", "c": "#cdbfa6", "C": "#f4ecd8", "m": "#3e2a22", "n": "#6a4630", "N": "#94673f", "t": "#6a4630", "T": "#94673f"},
+    "2": {"q": "#1f3f3a", "c": "#2f6b55", "C": "#4f9a72", "m": "#3e2a22", "n": "#94673f", "N": "#c4955e", "t": "#94673f", "T": "#c4955e"},
+    "3": {"q": "#1e2340", "c": "#2f3a6e", "C": "#4a64a8", "m": "#3a3e52", "n": "#6a7088", "N": "#a4acc0", "t": "#a4acc0", "T": "#e0e6f0"},
+    "4": {"q": "#6e1e24", "c": "#a8322e", "C": "#d8553a", "m": "#6a7088", "n": "#a4acc0", "N": "#e0e6f0", "t": "#a8701e", "T": "#e0a838"},
+    "5": {"q": "#a8322e", "c": "#d8553a", "C": "#f08a5a", "m": "#a8701e", "n": "#e0a838", "N": "#f8dc7a", "t": "#e0a838", "T": "#f8dc7a"}
+  },
+  "outline": {"mode": "solid", "color": "k"},
+  "poses": {
+    "core": [
+      "....hhHHhhhHHhh...",
+      "..hhhHHhhhHHhhhH..",
+      ".hhhHHhhhHHhhhHHh.",
+      "hhhHHhhhHHhhhHHhhh",
+      "hhHHhhhHHhhhHHhhhH",
+      "hhhhhhhhhhhhhhhhhh",
+      ".hhhSSSSSSSSSSSSS.",
+      ".hhHhhffffsssssss.",
+      "..hHhsfHHHfffHHfs.",
+      "..hhSsffhhfffhhss.",
+      "..hhSSffhwfffhwsss",
+      "..hSsSffHHffsHHsS.",
+      "...hsssffffshhhs..",
+      "....SsssssssSSsS..",
+      ".....SSssshhS.....",
+      "....cCSSSShhc.....",
+      "..cCCCCTccccccqq..",
+      ".cCCCCCcTcccccqq..",
+      ".cCCCCCccTccccqq..",
+      ".cCCCCCcccTcccqq..",
+      ".cCCCCcccccTccqq..",
+      ".cCCCCccccccTcqq..",
+      ".tTTTTTTTTTtttt...",
+      ".cCCCCccccccTcqq.."
+    ],
+    "legs": [
+      ".cCCCCccccccTcqq.",
+      ".cCCCCccccccTcqq.",
+      "cCCCCCccccccTcqq.",
+      "cCCCCCccccccTcqqq",
+      "cCCCCcccccccTcqqq",
+      "cCCCCcccccccTcqqq",
+      "tTTTTTTTTTTTTTTtt",
+      "..yyyy..wwwyy....",
+      "..yyyy..wwwyy....",
+      "..yyyy..wwwyy....",
+      "..yyyy..wwwyy....",
+      "..yyyy..wwwyy....",
+      "..yyyy..wwwyy....",
+      "..hHHh..hHHHh....",
+      ".hHHHh..hHHHHh...",
+      ".hhhhhh.hhhhhhh.."
+    ],
+    "back": [
+      "...jJ...",
+      ".jJ.Jj..",
+      ".jJjjJj.",
+      "..jj.J..",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      ".bbbbbb."
+    ],
+    "back_b": [
+      "..jJ....",
+      ".jJ.Jj..",
+      ".jJjjJj.",
+      "..jj.J..",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      "bbbbbbbb",
+      "byyyyyyb",
+      ".bbbbbb."
+    ],
+    "near": [
+      "cCCCc...",
+      "cCCCcq..",
+      "cCCCcq..",
+      "cCCCcq..",
+      ".cCCCq..",
+      ".cCCq...",
+      "..tTt.H.",
+      "...fsyb.",
+      "...sSbb.",
+      "....ybbb",
+      "....ybbb",
+      "....bbbH",
+      ".....HH."
+    ],
+    "near_lift": [
+      "...........J",
+      "..........jJ",
+      ".........Hj.",
+      "cCCCc...yb..",
+      "cCCCcq..bb..",
+      "cCCcqfsybbb.",
+      "cCcqsSybbb..",
+      ".qqq...bbbH.",
+      "........HH.."
+    ],
+    "near_pour": [
+      "...........ybbb.",
+      "cCCCCCtTtfsybbbb",
+      "cCCCCCtTtsSybbbb",
+      "cCCCccq....bbbbH",
+      ".cCCq.......HH.."
+    ],
+    "farm": ["cq.", "cqq", ".cq", ".cq", ".tt", ".sS"],
+    "fx_glow": [
+      "....jj.....",
+      "..jJJJj....",
+      ".jJJJJJj...",
+      "jJJwwwJJj..",
+      "jJwwwwwJj..",
+      "jJwwwwwJj..",
+      "jJJwwwJJj..",
+      ".jJJJJJj...",
+      "..jJJJj....",
+      "....jj.....",
+      "...........",
+      "........Jj.",
+      ".......jJJj",
+      "........jj."
+    ],
+    "fx_rise": [
+      ".......Jj....",
+      "......jJJj...",
+      ".......jj....",
+      ".............",
+      ".Jj..........",
+      "jJJj.....Jj..",
+      ".jj.....jJJj.",
+      ".........jj..",
+      ".............",
+      "....jJJj.....",
+      "...jJJwwj....",
+      "...jJwwwj....",
+      "....jJJj.....",
+      ".............",
+      "..........Jj.",
+      ".........jJJj",
+      "..........jj."
+    ],
+    "fx_mote": [".Jj.", "jJJj", ".jj."]
+  },
+  "layers": [
+    {
+      "name": "back",
+      "z": 0,
+      "origin": [11, 14],
+      "rows": "back"
+    },
+    {
+      "name": "farm",
+      "z": 1,
+      "origin": [31, 23],
+      "rows": "farm"
+    },
+    {
+      "name": "legs",
+      "z": 2,
+      "origin": [16, 30],
+      "rows": "legs"
+    },
+    {
+      "name": "core",
+      "z": 3,
+      "origin": [16, 6],
+      "rows": "core"
+    },
+    {
+      "name": "near",
+      "z": 5,
+      "origin": [18, 22],
+      "rows": "near"
+    },
+    {
+      "name": "fx",
+      "z": 6,
+      "origin": [35, 17],
+      "rows": "fx_glow"
+    }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "layers": {
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_1",
+      "layers": {
+        "back": {"dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_2",
+      "layers": {
+        "back": {"rows": "back_b", "dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_3",
+      "layers": {
+        "back": {"rows": "back_b"},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_0",
+      "layers": {
+        "back": {"rows": "back_b", "dx": -1},
+        "farm": {"dx": -1},
+        "core": {"dx": -1},
+        "near": {"rows": "near_lift", "dy": -2},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_1",
+      "layers": {
+        "back": {"dx": 1},
+        "farm": {"dx": 1},
+        "core": {"dx": 1},
+        "near": {"rows": "near_pour", "dx": 1, "dy": -1}
+      }
+    },
+    {
+      "name": "attack_2",
+      "layers": {
+        "back": {"rows": "back_b", "dx": 1},
+        "farm": {"dx": 1},
+        "core": {"dx": 1},
+        "near": {"rows": "near_pour", "dx": 1, "dy": -1},
+        "fx": {"rows": "fx_rise", "dx": -1, "dy": -8}
+      }
+    },
+    {
+      "name": "attack_3",
+      "layers": {
+        "back": {"rows": "back_b"},
+        "fx": {"rows": "fx_mote", "dx": 3, "dy": -5}
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": ["idle_0", "idle_1", "idle_2", "idle_3"],
+      "duration_ms": 200,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "attack_0",
+        "attack_1",
+        "attack_2",
+        "attack_3"
+      ],
+      "duration_ms": [110, 70, 80, 90],
+      "loop": false
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+ "schema": "codeart2d.pixelspec.v1",
+ "name": "enemy_toad",
+ "canvas": [
+  36,
+  32
+ ],
+ "anchor_px": [
+  18,
+  29
+ ],
+ "palette": {
+  "k": "#241622",
+  "A": "#2e2018",
+  "B": "#5a3e2a",
+  "C": "#8a6440",
+  "D": "#b88e5e",
+  "h": "#a89478",
+  "H": "#e8dcc0",
+  "b": "#5a4a3a",
+  "g": "#7aa030",
+  "G": "#c8e060",
+  "q": "#4a1020",
+  "r": "#8a2030",
+  "y": "#ffe25a",
+  "Y": "#fff8c0"
+ },
+ "variants": {
+  "_": {},
+  "gold": {
+   "A": "#2e2018",
+   "B": "#5a3a1a",
+   "C": "#a8701e",
+   "D": "#e0a838",
+   "g": "#c84040",
+   "G": "#f07860"
+  }
+ },
+ "outline": {
+  "mode": "solid",
+  "color": "k"
+ },
+ "poses": {
+  "f0": [
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "...................HH...............",
+   "...................HHh..............",
+   "....................hhbDDC..........",
+   ".....................CDDCCB.........",
+   "..............DDDDDDCDCAAACB........",
+   "...........DDDDCGgCCCAyYAAAB........",
+   ".........DDDCCCCggCCCAyAyyAB........",
+   "........AAGGgCCCCCCCGgAyyyACCC......",
+   ".......ADDgggACCCCCCggBAAABCCCC.....",
+   "......DDDCCCCCACCCCCCCCCCCCCCCCB....",
+   ".....DDCCCCCCCGgCCCCCCCCCCCCCCCB....",
+   "....DDCCCCCCCCggACCCCCCCCACCCCCB....",
+   "....DCCCGgCCCCCBACCCCCCCABACCCBB....",
+   "....DCCCggCCCCCBAqCCCCCCABACCBB.....",
+   "....BCCCCCCCCCCBAHqqqqqqqqqqqA......",
+   "....BBCCCCCCCCBBAHHHHHHHHrrqh.......",
+   ".....BBBCCCCBBBAHHHHHHHhhABB........",
+   ".....ABBBBBBBBAhhhhhhhhhhABBBB......",
+   ".....BAABBBB..hhhhhhhhh...BBBB......",
+   "....................................",
+   "....................................",
+   "....................................",
+   "...................................."
+  ],
+  "f1": [
+   "....................................",
+   "....................................",
+   "....................HH..............",
+   "....................HHh.............",
+   ".....................hhbDDC.........",
+   "......................CDDCCB........",
+   ".....................CDCAAACB.......",
+   ".....................CAyYAAAB.......",
+   "................DDDDDCAyAyyAB.......",
+   ".............DDDDCGgCCBAyyyACCC.....",
+   "...........DDDCCCCggCCCBAAABCCCB....",
+   "..........DDGGgCCCCCCCGgCCCCCCCB....",
+   ".........DDCgggCCCCCCCggCCCCCCCCB...",
+   ".........AAAACCCCCCCCCCCCCCCCCAAA...",
+   "........ADDDDACCGgCCCCCCCCCCCADDBB..",
+   "........DDCCCCACggqCCCCCCCCCCADBBB..",
+   ".......DDCGgCCCACCCqqqqqqqqqqqAB....",
+   "......DDCCggCCCBACCCCCCCCCrrqBBA....",
+   "......DCCCCCCCCBAHHHHHHHHABBBAA.....",
+   "......BCCCCCCCCBAHHHHHHHHABAAhh.....",
+   "......BBCCCCCCBBAHHHHHHHHHAhhh......",
+   "......ABBCCCCBBAHHHHHHHHhhhhh.......",
+   "......BABBBBBBAhhhhhhhhhhhh.........",
+   "......AAABBBB...hhhhhhhh............",
+   ".....AAA............................",
+   "....AA..............................",
+   ".AAAAA..............................",
+   ".AAAAA..............................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "...................................."
+  ],
+  "f2": [
+   "....................................",
+   "....................................",
+   "....................HH..............",
+   "....................HHh.............",
+   ".....................hhbDDC.........",
+   "......................CDDCCB........",
+   ".....................CDCAAACB.......",
+   "................DDDDDCAyYAAAB.......",
+   ".............DDDDCGgCCAyAyyAB.......",
+   "...........DDDCCCCggCCBAyyyACCC.....",
+   "..........DDGGgCCCCCCCGgAAABCCCC....",
+   ".........AAAgggCCCCCCCggCCCCCCCCB...",
+   "........DDDDACCCCCCCCCCCCCCCCCCCB...",
+   ".......DDCCCCACCGgCCCCCCCCCCCCCCB...",
+   "......DDCCCCCCACggCCCCCCCCCCCCCBB...",
+   ".....DDCCCGgCCBACCqCCCCCCCCCCCCB....",
+   ".....DCCCCggCCBACCCqqqqqqqqqqqAB....",
+   ".....BCCCCCCCCBAHHHHHHHHHHrrqAh.....",
+   ".....BBCCCCCCBBAHHHHHHHHHHABBB......",
+   "....BABBCCCCBBAhHHHHHHHHhhhABBBB....",
+   "....BBABBBBBBABhhhhhhhhhhhh...BBB...",
+   "..AAAAA.BBBB....hhhhhhhh.......BBBB.",
+   "..AAAAA........................BBBB.",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "...................................."
+  ],
+  "f3": [
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................................",
+   "....................HH..............",
+   "....................HHh.............",
+   ".....................hhbDDC.........",
+   "...............DDDDDDDCDDCCB........",
+   "............DDDDCGgCCCDCAAACB.......",
+   "...........DDCCCCggCCCAyYAAAB.......",
+   ".........DDGGgCCCCCCCGgyAyyABC......",
+   "........AAAgggCCCCCCCggAyyyACCC.....",
+   "........DDDDDACCCCCCCCCBAAABCCCB....",
+   ".......DDCCCCCAGgCCCCCCCCCCCCCCB....",
+   "......DDCCCCCCCggCCCCCCCCCCCCCCCB...",
+   ".....DDCCGgCCCCBACCCCCCCCCCCCCCCB...",
+   ".....DCCCggCCCCBACCCCCCCCCCCCCCBB...",
+   ".....BCCCCCCCCCBAHqHHHHHHHHAHHHh....",
+   ".....BBCCCCCCCBBAHHqqqqqqqqqqqAh....",
+   ".....ABBCCCCCBBAHHHHHHHHHHrrqhh.....",
+   ".....BABBBBBBBAHHHHHHHHHhhABB.......",
+   "...AAAAABBBBBAhhhhhhhhhhhhh.B.......",
+   "...AAAAA.......hhhhhhhhh....B.......",
+   "............................BB......",
+   "............................BBBB....",
+   "............................BBBB....",
+   "....................................",
+   "....................................",
+   "....................................",
+   "...................................."
+  ]
+ },
+ "layers": [
+  {
+   "name": "body",
+   "z": 0,
+   "origin": [
+    0,
+    0
+   ],
+   "rows": "f0"
+  }
+ ],
+ "frames": [
+  {
+   "name": "walk_0",
+   "layers": {
+    "body": {
+     "rows": "f0"
+    }
+   }
+  },
+  {
+   "name": "walk_1",
+   "layers": {
+    "body": {
+     "rows": "f1"
+    }
+   }
+  },
+  {
+   "name": "walk_2",
+   "layers": {
+    "body": {
+     "rows": "f2"
+    }
+   }
+  },
+  {
+   "name": "walk_3",
+   "layers": {
+    "body": {
+     "rows": "f3"
+    }
+   }
+  }
+ ],
+ "clips": {
+  "walk": {
+   "frames": [
+    "walk_0",
+    "walk_1",
+    "walk_2",
+    "walk_3"
+   ],
+   "duration_ms": 167,
+   "loop": true
+  }
+ }
+}

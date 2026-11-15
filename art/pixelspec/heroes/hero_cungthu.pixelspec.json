@@ -1,0 +1,423 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "hero_cungthu",
+  "canvas": [48, 48],
+  "anchor_px": [24, 46],
+  "palette": {
+    "k": "#241622",
+    "S": "#b8735a",
+    "s": "#e3a27f",
+    "f": "#f6cfac",
+    "h": "#2b1d2a",
+    "H": "#45304a",
+    "w": "#f4ecd8",
+    "q": "#94673f",
+    "c": "#cdbfa6",
+    "C": "#f4ecd8",
+    "m": "#3e2a22",
+    "n": "#6a4630",
+    "N": "#94673f",
+    "t": "#6a4630",
+    "T": "#94673f",
+    "y": "#cdbfa6",
+    "b": "#94673f",
+    "B": "#c4955e"
+  },
+  "variants": {
+    "1": {"q": "#94673f", "c": "#cdbfa6", "C": "#f4ecd8", "m": "#3e2a22", "n": "#6a4630", "N": "#94673f", "t": "#6a4630", "T": "#94673f"},
+    "2": {"q": "#1f3f3a", "c": "#2f6b55", "C": "#4f9a72", "m": "#3e2a22", "n": "#94673f", "N": "#c4955e", "t": "#94673f", "T": "#c4955e"},
+    "3": {"q": "#1e2340", "c": "#2f3a6e", "C": "#4a64a8", "m": "#3a3e52", "n": "#6a7088", "N": "#a4acc0", "t": "#a4acc0", "T": "#e0e6f0"},
+    "4": {"q": "#6e1e24", "c": "#a8322e", "C": "#d8553a", "m": "#6a7088", "n": "#a4acc0", "N": "#e0e6f0", "t": "#a8701e", "T": "#e0a838"},
+    "5": {"q": "#a8322e", "c": "#d8553a", "C": "#f08a5a", "m": "#a8701e", "n": "#e0a838", "N": "#f8dc7a", "t": "#e0a838", "T": "#f8dc7a"}
+  },
+  "outline": {"mode": "solid", "color": "k"},
+  "poses": {
+    "core": [
+      "............wwy............",
+      "...........wwwyy...........",
+      "..........wwwwyyb..........",
+      "........wwwwwwyyyyb........",
+      ".......wwwwwwwyyyybb.......",
+      ".....wwwwwwwwyyyyyyybb.....",
+      "....TTTTTTTTTtttttttttt....",
+      "..wwwwwwwwwwwyyyyyyyyyybb..",
+      "yyyyyyyyyyyyyyyyyyyyyyybbbb",
+      ".bbbbbhhhhSSSSSSSSSSbbbbbb.",
+      ".....hhHhhsssssssssss......",
+      "......hHhsfhhhfffhhfs......",
+      "......hhSsffhhfffhhss......",
+      "......hhSSffhwfffhwsss.....",
+      "......hSsSffHHffsHHsS......",
+      ".......hsssffffsssss.......",
+      "........SsssssssSSsS.......",
+      "..........SSssssSS.........",
+      "........cCCSSSSTcc.........",
+      "......cCCCCCSTccccqq.......",
+      ".....cCCCCCCTcccccqq.......",
+      ".....cCCCCCTccccccqq.......",
+      ".....qCCCCTcccccccqq.......",
+      ".....qcCCTccccccccqq.......",
+      "......qcTcccccccccqq.......",
+      "......tTTTTTTTTTTttt.......",
+      "......tttttttttttttt.......",
+      ".....cCCCCcccccccqqq.......",
+      ".....cCCCCccccccqqqq.......",
+      "....cCCCCcccccccqqqq.......",
+      "....qcCCCcccccccqqqq.......",
+      "....qqcccccccccqqqqq......."
+    ],
+    "legs": [
+      "qqqqq.CCccqq..",
+      ".qqqq.CCccq...",
+      ".qqqq.CCccq...",
+      ".qqqq.Cccqq...",
+      ".tTtt.TTTTt...",
+      ".ttTt.tTTTt...",
+      ".tTtt.TTTTt...",
+      ".ttTt.tTTTt...",
+      ".sSSS.fsssSS..",
+      "ssSSS.fssssSS.",
+      "bbbbb.bbbbbbbb"
+    ],
+    "near": [".NNnn.", "NNNnnm", "nnnnmm", "CCCccq", "CCcccq", "Ccccqq", ".nNnm.", ".nNnm.", ".fssS.", ".sssS."],
+    "near_ret": [
+      ".NNnn....",
+      "NNNnnm...",
+      "nnnnmm...",
+      "CCCccq...",
+      "Ccccqq...",
+      ".cnNNNNsf",
+      ".qnnnnmsS"
+    ],
+    "near_draw": [
+      ".CCc...........",
+      "CCCcnNNNNNNNsss",
+      "cCccnnnnnnnmsSS",
+      ".ccqNNNn.......",
+      "..NNNnnm.......",
+      "..nnnmm........"
+    ],
+    "near_loose": [
+      "ff..........",
+      "sfnNNNnCCc..",
+      "Ssnnnmmccq..",
+      ".......NNNn.",
+      "......NNNnnm",
+      "......nnnmm."
+    ],
+    "farm": [
+      "..Bb....",
+      "..wBb...",
+      "..wBb...",
+      "..w.Bb..",
+      "..w.Bb..",
+      "..w..Bb.",
+      "..w..Bb.",
+      "..w..Bb.",
+      "..w...Bb",
+      "cqw...Bb",
+      "cqq...Bb",
+      ".cqq..Bb",
+      "..nnm.Bb",
+      "..wnmfss",
+      "..w..sss",
+      "..w..SSS",
+      "..w...Bb",
+      "..w...Bb",
+      "..w...Bb",
+      "..w...Bb",
+      "..w...Bb",
+      "..w...Bb",
+      "..w...Bb",
+      "..w..Bb.",
+      "..w..Bb.",
+      "..w.Bb..",
+      "..w.Bb..",
+      "..wBb...",
+      "..wBb...",
+      "..Bb...."
+    ],
+    "farm_draw": [
+      "......Bb...",
+      "......Bb...",
+      ".......Bb..",
+      ".......Bb..",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      "........fss",
+      "cqqnnnnmsss",
+      "qqqnnmmmsSS",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      ".......Bb..",
+      ".......Bb..",
+      "......Bb...",
+      "......Bb..."
+    ],
+    "farm_rest": [
+      ".......Bb..",
+      ".......Bb..",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      "........fss",
+      "cqqnnnnmsss",
+      "qqqnnmmmsSS",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      ".........Bb",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      "........Bb.",
+      ".......Bb..",
+      ".......Bb.."
+    ],
+    "fx_draw": [
+      ".....w...........",
+      ".....w...........",
+      "....w............",
+      "....w............",
+      "...w.............",
+      "...w.............",
+      "..w..............",
+      "..w..............",
+      ".w...............",
+      ".w...............",
+      "w................",
+      "w..............w.",
+      "BBBBBBBBBBBBBBBww",
+      "...............w.",
+      "w................",
+      "w................",
+      ".w...............",
+      ".w...............",
+      "..w..............",
+      "..w..............",
+      "...w.............",
+      "...w.............",
+      "....w............",
+      "....w............",
+      ".....w...........",
+      ".....w..........."
+    ],
+    "fx_loose": [
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w........w.",
+      "wwwBBBBBBBBww",
+      "..w........w.",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w..........",
+      "..w.........."
+    ],
+    "fx_trail": [
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w.....yy...",
+      "w....yyyyww",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w..........",
+      "w.........."
+    ],
+    "back": [".w.w..", ".w.w..", ".hhh..", "tTTt..", "BBbb..", ".BBbb.", ".BBbb.", ".BBbb.", "..BBbb", "..BBbb", "..tTTt"],
+    "sash_a": ["TTt.", ".Tt.", ".Tt.", "..Tt"],
+    "sash_b": ["TTt..", ".Tt..", "..Tt.", "...Tt"]
+  },
+  "layers": [
+    {
+      "name": "back",
+      "z": 0,
+      "origin": [12, 19],
+      "rows": "back"
+    },
+    {
+      "name": "farm",
+      "z": 1,
+      "origin": [31, 14],
+      "rows": "farm"
+    },
+    {
+      "name": "legs",
+      "z": 2,
+      "origin": [17, 35],
+      "rows": "legs"
+    },
+    {
+      "name": "core",
+      "z": 3,
+      "origin": [12, 3],
+      "rows": "core"
+    },
+    {
+      "name": "sash",
+      "z": 4,
+      "origin": [28, 29],
+      "rows": "sash_a"
+    },
+    {
+      "name": "near",
+      "z": 5,
+      "origin": [18, 22],
+      "rows": "near"
+    },
+    {
+      "name": "fx",
+      "z": 6,
+      "origin": [30, 9],
+      "rows": "fx_draw"
+    }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "layers": {
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_1",
+      "layers": {
+        "back": {"dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "sash": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_2",
+      "layers": {
+        "back": {"dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "sash": {"rows": "sash_b", "dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_3",
+      "layers": {
+        "sash": {"rows": "sash_b"},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_0",
+      "layers": {
+        "back": {"dx": -1},
+        "farm": {"rows": "farm_draw", "dx": -1, "dy": -6},
+        "core": {"dx": -1},
+        "sash": {"dx": -1},
+        "near": {"rows": "near_draw", "dx": -3, "dy": -2}
+      }
+    },
+    {
+      "name": "attack_1",
+      "layers": {
+        "back": {"dx": -1},
+        "farm": {"rows": "farm_rest", "dx": -1, "dy": -6},
+        "core": {"dx": -1},
+        "sash": {"rows": "sash_b", "dx": -1},
+        "near": {"rows": "near_loose", "dx": -7, "dy": -2},
+        "fx": {"rows": "fx_loose", "dx": 4}
+      }
+    },
+    {
+      "name": "attack_2",
+      "layers": {
+        "back": {"dx": -1},
+        "farm": {"rows": "farm_rest", "dx": -1, "dy": -6},
+        "core": {"dx": -1},
+        "sash": {"rows": "sash_b", "dx": -1},
+        "near": {"rows": "near_loose", "dx": -7, "dy": -2},
+        "fx": {"rows": "fx_trail", "dx": 6}
+      }
+    },
+    {
+      "name": "attack_3",
+      "layers": {
+        "near": {"rows": "near_ret"},
+        "fx": {"hidden": true}
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": ["idle_0", "idle_1", "idle_2", "idle_3"],
+      "duration_ms": 200,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "attack_0",
+        "attack_1",
+        "attack_2",
+        "attack_3"
+      ],
+      "duration_ms": [110, 70, 80, 90],
+      "loop": false
+    }
+  }
+}

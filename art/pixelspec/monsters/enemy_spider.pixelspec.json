@@ -1,0 +1,220 @@
+{
+ "schema": "codeart2d.pixelspec.v1",
+ "name": "enemy_spider",
+ "canvas": [
+  40,
+  28
+ ],
+ "anchor_px": [
+  20,
+  26
+ ],
+ "palette": {
+  "k": "#241622",
+  "A": "#1a1022",
+  "B": "#3a1f4e",
+  "C": "#6a3a9a",
+  "D": "#a878e0",
+  "r": "#8a2030",
+  "R": "#c84040",
+  "e": "#c84040",
+  "E": "#f07860",
+  "y": "#ffe25a",
+  "h": "#a89478",
+  "H": "#e8dcc0"
+ },
+ "variants": {
+  "_": {},
+  "venom": {
+   "A": "#16364a",
+   "B": "#266e74",
+   "C": "#3a8e88",
+   "D": "#78bfae",
+   "r": "#7aa030",
+   "R": "#c8e060"
+  }
+ },
+ "outline": {
+  "mode": "solid",
+  "color": "k"
+ },
+ "poses": {
+  "f0": [
+   "........................................",
+   "........................................",
+   "..........CCCCCCD.......................",
+   "........CCCDDDDDDDD.....................",
+   ".......CCDrRRRrBBBBB....................",
+   "......CCDrRRRRRrBBBBA..........A........",
+   ".....ACDDrAARAArBBBBA..........A...DB...",
+   "...ADBADBBrRRRrBBBBBBA........AA..DDB...",
+   "....DBBAABBrRrBBBBBBBA........AA.BBBB...",
+   "....BBBBBAABBBBBBBBBAACCCCCC..AA.BBBB...",
+   "...DBAABBBBABBBBBBBACCCBBBBBBBAABB.BB...",
+   "...DB.AAABBBAABAABACCBBBBBBBBeEAB...BB..",
+   "...DB.AABAABBBAABACCBBBBBBBBeEyE....DB..",
+   "...DB..AAABABBBBAACBBBBBBBBBBeEE....DB..",
+   "...DB...AAAAAABBBAABBBBBBBBBeeBeA...DB..",
+   "...BB.....AAAAAABAAABBBBBBBBBBAAA...DB..",
+   "..DB......A...DB..AAAABBBBBBAHHhA...DB..",
+   "..DB......A...DB...AAAAAAAAAAAHhA...DB..",
+   "..DB......A...DB....A.AAAAAA..DhA...BB..",
+   "..DB......A...DB..............DBA...BB..",
+   "..DB......A...BB..............DBA....BB.",
+   "..BB......A..DB...............DBA....DB.",
+   ".BB.......A..DB...............DBA....DB.",
+   ".BB.......A..BB...............BBA....BB.",
+   ".BB..........BB...............BB.....BB.",
+   "........................................",
+   "........................................",
+   "........................................"
+  ],
+  "f1": [
+   "........................................",
+   "..........CCCCCCD.......................",
+   "........CCCDDDDDDDD.....................",
+   ".......CCDrRRRrBBBBB..............DB....",
+   "......CCDrRRRRRrBBBBA...........ADDB....",
+   ".....AADDrAARAArBBBBA...........ADCB....",
+   "...AADDABBrRRRrBBBBBBA.......A.ABBCB....",
+   ".....DDBAABrRrBBBBBBBA.......A.ABBCB....",
+   ".....DBBBBABBBAABBBBAACCCCCCAAABB.CB....",
+   ".....DBABBBAAADBABBACCCBBBBBBBABBADB....",
+   ".....BBAAABBBADBBAACCBBBBBBBBeEA.ADB....",
+   "....DBAABBABBBAABACCBBBBBBBBeEyEAABB....",
+   "....DB.AAABAABBBAACBBBBBBBBBBeEEAABB....",
+   "....DB..AAAAAABBBAABBBBBBBBBeeBeAA.BB...",
+   "....DB..A.AAADAABAAABBBBBBBBBBAAAA.DB...",
+   "....DB..A....BB..AAAAABBBBBBAHHhBA.DB...",
+   "....DB..A...DB..A...AAAAAAAAAAHhBA.DB...",
+   "....DB..A...DB..A.....AAAAAAA..hBA.DB...",
+   "....DB..A...DB..A...........A...BB.DB...",
+   "....BB..A...BB..A...........A...DBADB...",
+   "...DB...A..BB...A...........A...DBADB...",
+   "...DB...A..BB...A...........A...DBABB...",
+   "...DB......BB...A...............DBABB...",
+   "...BB...........A...............BBA.....",
+   "...BB...........................BB......",
+   "........................................",
+   "........................................",
+   "........................................"
+  ],
+  "f2": [
+   "........................................",
+   "........................................",
+   "..........CCCCCCD.......................",
+   "........CCCDDDDDDDD.....................",
+   ".......CCDrRRRrBBBBB....................",
+   "......CCDrRRRRRrBBBBA............A......",
+   ".....CAADrAARAArBBBBA...........ADB.....",
+   "...AAADDABrRRRrBBBBBBA..........DDB.....",
+   ".....ADDBABrRrBBBBBBBA.........ADCB.....",
+   ".....ADBBBAABBBBBBBBAACCCCCCA..BBCB.....",
+   ".....ADBABBBABBBBBBACCCBBBBBBBABBCB.....",
+   "......DBAABBBAABBBACCBBBBBBBBeEA.AB.....",
+   "......DBABAABBBABACCBBBBBBBBeEyEABA.....",
+   "......DBAABBABBBAACBBBBBBBBBBeEEABA.....",
+   "......DBAAAADAABBAABBBBBBBBBeeBeABAA....",
+   "......BB..AADBAABAAABBBBBBBBBBAA.BBA....",
+   ".....DBA....BB...AAAAABBBBBBAHHh.DBA....",
+   ".....DBA...DB.....AAAAAAAAAAAAHh.DBA....",
+   ".....DBA...DB.....A.A.AAAAAA...h.DBA....",
+   ".....DB....BB.....A........A.....BBA....",
+   ".....DB...DB......A.......A......BB.A...",
+   ".....DB...DB......A.......A......ABBA...",
+   ".....DB...BB......A.......A......ABBA...",
+   ".....BB..BB.......A.......A......ABBA...",
+   ".....BB..BB......................ABB....",
+   "........................................",
+   "........................................",
+   "........................................"
+  ],
+  "f3": [
+   "........................................",
+   "..........CCCCCCD.......................",
+   "........CCCDDDDDDDD.............A.......",
+   ".......CCDrRRRrBBBBB............A.......",
+   ".....DBADrRRRRRrBBBBA..........AA.......",
+   ".....DBAArAARAArBBBBA..........AA.DB....",
+   "...AADBBBArRRRrBBBBBBA.........AADDB....",
+   ".....DBBBBArRrBBBBBBBA........A..BCB....",
+   ".....BBAABBAABBBBBBBAACCCCCC.AA.ABCB....",
+   "....DBABBABBBABBBBBACCCBBBBBBB.DBACB....",
+   "....DBABBBABBBAABBACCBBBBBBBBeEABADB....",
+   "....DBAABBBAABBAAACCBBBBBBBBeEyEAADB....",
+   "....DB.AAABBBABBBACBBBBBBBBBBeEEAADB....",
+   "....DB..AAAAAAABBAABBBBBBBBBeeBeAABB....",
+   "....DB..A.AAADBAAAAABBBBBBBBBBAAAABB....",
+   "....DB..A....DB.A.AAAABBBBBBAHHhBA.BB...",
+   "....DB..A....DB.A..AAAAAAAAAAAHhBB.DB...",
+   "....BB..A....BB.A...A.AAAAAAA..hDBADB...",
+   "...DB...A...DB..A...........A...DBADB...",
+   "...DB...A...DB..A...........A...DBADB...",
+   "...DB...A...DB..A...........A...DBADB...",
+   "...BB...A...BB..A...........A...BBADB...",
+   "...BB...A..BB...............A...BB.DB...",
+   "........A..BB...............A......BB...",
+   "...........BB......................BB...",
+   "........................................",
+   "........................................",
+   "........................................"
+  ]
+ },
+ "layers": [
+  {
+   "name": "body",
+   "z": 0,
+   "origin": [
+    0,
+    0
+   ],
+   "rows": "f0"
+  }
+ ],
+ "frames": [
+  {
+   "name": "walk_0",
+   "layers": {
+    "body": {
+     "rows": "f0"
+    }
+   }
+  },
+  {
+   "name": "walk_1",
+   "layers": {
+    "body": {
+     "rows": "f1"
+    }
+   }
+  },
+  {
+   "name": "walk_2",
+   "layers": {
+    "body": {
+     "rows": "f2"
+    }
+   }
+  },
+  {
+   "name": "walk_3",
+   "layers": {
+    "body": {
+     "rows": "f3"
+    }
+   }
+  }
+ ],
+ "clips": {
+  "walk": {
+   "frames": [
+    "walk_0",
+    "walk_1",
+    "walk_2",
+    "walk_3"
+   ],
+   "duration_ms": 100,
+   "loop": true
+  }
+ }
+}

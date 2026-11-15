@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản trị · Giữ Thành Cổ Loa</title>
+  <style>
+    :root {
+      --bg: #0f1113; --surface: #16191c; --surface2: #1c2024; --line: #272c31; --line2: #343a40;
+      --text: #e7e9eb; --muted: #8b949c; --dim: #626b73;
+      --accent: #e3b341; --accent-bg: #3a2e12; --ok: #3fb68b; --bad: #e5534b; --bad-bg: #3b1a19; --info: #6ca7e0; --violet: #a68be8;
+      --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    /* layout */
+    .app { display: grid; grid-template-columns: 196px 1fr; min-height: 100vh; }
+    nav.side { background: var(--surface); border-right: 1px solid var(--line); padding: 14px 10px; display: flex; flex-direction: column; gap: 2px; position: sticky; top: 0; height: 100vh; }
+    .brand { font-weight: 700; font-size: 15px; letter-spacing: .2px; padding: 2px 8px 12px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+    .brand small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+    nav.side a { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; border-radius: 6px; color: var(--muted); text-decoration: none; }
+    nav.side a:hover { background: var(--surface2); color: var(--text); }
+    nav.side a.on { background: var(--surface2); color: var(--text); box-shadow: inset 2px 0 0 var(--accent); }
+    nav.side a kbd { font: 11px var(--mono); color: var(--dim); }
+    .side-foot { margin-top: auto; font-size: 12px; color: var(--muted); display: grid; gap: 6px; padding: 8px; border-top: 1px solid var(--line); }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--dim); margin-right: 6px; vertical-align: 1px; }
+    .dot.ok { background: var(--ok); } .dot.bad { background: var(--bad); } .dot.warn { background: var(--accent); }
+
+    main { padding: 14px 18px 40px; min-width: 0; }
+    header.top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+    header.top h1 { font-size: 18px; margin: 0; font-weight: 600; }
+    header.top .meta { color: var(--muted); font-size: 13px; }
+    .tab { display: none; }
+    .tab.on { display: block; }
+
+    .grid { display: grid; gap: 12px; }
+    .cols-2 { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+    .card h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+    .card h2 .right { margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 400; }
+    .muted { color: var(--muted); } .small { font-size: 12px; }
+    .hint { color: var(--muted); font-size: 12px; margin: 8px 0 0; }
+
+    /* KPI tiles */
+    .kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(138px, 1fr)); gap: 8px; margin-bottom: 12px; }
+    .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px 8px; min-width: 0; }
+    .kpi .k { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .kpi .v { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.25; white-space: nowrap; }
+    .kpi .s { color: var(--dim); font-size: 11.5px; min-height: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .kpi.hl .v { color: var(--accent); }
+
+    /* game strip */
+    .strip { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 13px; }
+    .strip span b { font-weight: 600; }
+    .strip .muted { margin-right: 4px; }
+
+    /* charts */
+    .charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+    .chart .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+    .chart .head b { font-size: 13px; font-weight: 600; }
+    .chart .head span { font-size: 12px; color: var(--muted); }
+    .chart svg { width: 100%; height: 110px; display: block; }
+    .chart svg .axis { stroke: var(--line2); stroke-width: 1; }
+    .chart svg text { fill: var(--dim); font-size: 10px; font-family: var(--mono); }
+    .seg { display: inline-flex; border: 1px solid var(--line2); border-radius: 6px; overflow: hidden; }
+    .seg button { background: none; border: 0; padding: 3px 9px; font-size: 12px; color: var(--muted); cursor: pointer; }
+    .seg button.on { background: var(--surface2); color: var(--text); }
+
+    /* class bar */
+    .clsbar { display: flex; height: 16px; border-radius: 4px; overflow: hidden; background: var(--surface2); }
+    .clsbar div { height: 100%; }
+    .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; font-size: 12.5px; }
+    .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: 0; }
+
+    /* log */
+    .log { height: 320px; overflow: auto; font-size: 12.5px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 0; }
+    .log .ln { display: grid; grid-template-columns: 62px 1fr auto; gap: 8px; padding: 2px 8px; align-items: baseline; }
+    .log .ln:hover { background: var(--surface2); }
+    .log .t { color: var(--dim); font-family: var(--mono); font-size: 11.5px; }
+    .log .who { font-weight: 600; }
+    .log .tag { font-size: 10.5px; padding: 0 5px; border-radius: 3px; border: 1px solid var(--line2); color: var(--muted); margin-left: 6px; font-weight: 400; }
+    .log .ln.gift .what { color: var(--accent); }
+    .log .ln.follow .what, .log .ln.share .what { color: var(--info); }
+    .log .ln.member .what { color: var(--muted); }
+    .log .acts { visibility: hidden; display: flex; gap: 4px; }
+    .log .ln:hover .acts { visibility: visible; }
+
+    /* controls */
+    .btn { background: var(--surface2); border: 1px solid var(--line2); border-radius: 6px; padding: 6px 11px; cursor: pointer; white-space: nowrap; }
+    .btn:hover { border-color: var(--muted); }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { background: var(--accent-bg); border-color: var(--accent); color: #f6dd9b; }
+    .btn.danger { background: var(--bad-bg); border-color: #7a2d2a; color: #f3b1ad; }
+    .btn.danger:hover { border-color: var(--bad); }
+    .btn.xs { padding: 1px 7px; font-size: 11.5px; border-radius: 4px; }
+    a.btn { text-decoration: none; display: inline-block; color: var(--text); }
+    .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+    .btns + .btns { margin-top: 6px; }
+    .group { margin-bottom: 12px; }
+    .group:last-child { margin-bottom: 0; }
+    .group > .lbl { font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+    .hotkey { display: flex; flex-direction: column; align-items: flex-start; min-width: 108px; padding: 7px 11px; }
+    .hotkey small { color: var(--dim); font-size: 11px; }
+    input[type=text], input[type=password], input[type=search], select, textarea {
+      background: var(--bg); border: 1px solid var(--line2); border-radius: 6px; padding: 6px 9px; width: 100%; outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    .row { display: flex; gap: 8px; align-items: center; }
+    .row > input { flex: 1; min-width: 0; }
+    .field { margin-bottom: 8px; }
+    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+    .err { color: var(--bad); font-size: 12.5px; min-height: 18px; }
+    .status { padding: 7px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); margin-bottom: 10px; }
+    .range { display: grid; grid-template-columns: 80px 1fr 36px; gap: 10px; align-items: center; margin: 6px 0; }
+    .range input { accent-color: var(--accent); width: 100%; }
+    label.chk { display: flex; align-items: center; gap: 8px; margin: 6px 0; cursor: pointer; }
+    label.chk input { accent-color: var(--accent); }
+
+    /* tables */
+    .tblwrap { overflow: auto; max-height: 70vh; border: 1px solid var(--line); border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 5px 9px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th { position: sticky; top: 0; background: var(--surface2); color: var(--muted); font-weight: 600; font-size: 12px; z-index: 1; }
+    th.sort { cursor: pointer; user-select: none; }
+    th.sort:hover { color: var(--text); }
+    th .arr { color: var(--accent); margin-left: 3px; }
+    td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+    tbody tr:hover { background: var(--surface2); }
+    tr.dead td { color: var(--dim); }
+    .pill { display: inline-block; font-size: 11px; padding: 0 6px; border-radius: 9px; border: 1px solid var(--line2); color: var(--muted); }
+    .pill.ok { border-color: #285e4a; color: var(--ok); }
+    .pill.sim { border-color: #4a3f6b; color: var(--violet); }
+    .empty { color: var(--dim); padding: 14px; text-align: center; }
+    .toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .toolbar input[type=search] { max-width: 260px; }
+
+    .recap { width: 100%; min-height: 190px; font: 12.5px/1.5 var(--mono); resize: vertical; }
+    .kv { display: grid; grid-template-columns: auto 1fr; gap: 3px 16px; font-size: 13px; }
+    .kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+    /* dialog + toast */
+    dialog { background: var(--surface); color: var(--text); border: 1px solid var(--line2); border-radius: 10px; padding: 18px 20px; max-width: 420px; width: calc(100% - 32px); }
+    dialog::backdrop { background: rgba(0, 0, 0, .6); }
+    dialog h3 { margin: 0 0 8px; font-size: 16px; }
+    dialog p { margin: 0 0 16px; color: var(--muted); }
+    dialog .btns { justify-content: flex-end; }
+    dialog.wide { max-width: 1000px; }
+    .toasts { position: fixed; right: 16px; bottom: 16px; display: grid; gap: 8px; z-index: 50; }
+    .toast { background: var(--surface2); border: 1px solid var(--line2); border-left: 3px solid var(--ok); border-radius: 6px; padding: 8px 12px; max-width: 360px; font-size: 13px; }
+    .toast.bad { border-left-color: var(--bad); }
+
+
+    /* live bar + alerts */
+    .livebar { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between;
+      margin: -14px -18px 12px; padding: 10px 18px; background: linear-gradient(180deg, #1b1512, #15120f); border-bottom: 2px solid #5a1a14; box-shadow: 0 2px 0 #0008; }
+    .lb-state { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; min-width: 0; }
+    .lb-title { display: flex; gap: 8px; align-items: baseline; white-space: nowrap; min-width: 0; }
+    .lb-title b { font-size: 15px; color: #f6dd9b; }
+    .lb-wall { display: flex; gap: 8px; align-items: center; }
+    .lb-meter { width: 160px; height: 10px; background: #2a1f1a; border: 1px solid #4a3a2a; border-radius: 2px; overflow: hidden; }
+    .lb-meter i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .4s, background .4s; }
+    .lb-acts { display: flex; flex-wrap: wrap; gap: 6px; }
+    .livebar.paused { border-bottom-color: var(--accent); }
+    .livebar.boss { border-bottom-color: var(--bad); background: linear-gradient(180deg, #2a1312, #1a100f); }
+    .alert { background: var(--bad-bg); border: 1px solid #7a2d2a; color: #f3d1ce; border-radius: 8px; padding: 9px 12px; margin-bottom: 12px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+    .alert.warn { background: var(--accent-bg); border-color: #7a6020; color: #f6e2b0; }
+    .alert code { background: #0006; padding: 1px 6px; border-radius: 4px; }
+    .alert[hidden] { display: none; }
+
+    /* control tab */
+    .cmd-filter { margin-left: auto; max-width: 300px; }
+    .cmdgrid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); align-items: start; }
+    .cmdgrid > .grid { display: contents; }
+    .mapgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .btn.map { display: flex; align-items: center; gap: 8px; text-align: left; }
+    .btn.map i { width: 10px; height: 18px; border-radius: 2px; flex: none; box-shadow: inset 0 -3px 0 #0004; }
+    .btn.map b { color: var(--accent); font-variant-numeric: tabular-nums; min-width: 16px; }
+    .btn.map.on { border-color: var(--accent); background: var(--accent-bg); }
+    .cmdcard.nomatch, .btn.nomatch { display: none; }
+
+    @media (max-width: 760px) {
+      .app { grid-template-columns: 1fr; }
+      nav.side { position: sticky; top: 0; height: auto; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; padding: 6px 8px; z-index: 10; border-right: 0; border-bottom: 1px solid var(--line); }
+      .brand, .side-foot, nav.side a kbd { display: none; }
+      nav.side a { white-space: nowrap; }
+      nav.side a.on { box-shadow: inset 0 -2px 0 var(--accent); }
+      main { padding: 12px 16px 40px; }
+      .livebar { margin: -12px -16px 12px; padding: 8px 16px; position: static; }
+      .cmd-filter { margin-left: 0; max-width: none; }
+      .cols-2, .cols-3 { grid-template-columns: 1fr; }
+    }
+
+    /* live production: button in the live bar + teleprompter tab */
+    .btn.golive { background: var(--bad); border-color: var(--bad); color: #fff; font-weight: 700; }
+    .btn.golive.on { background: transparent; color: var(--bad); }
+    .lb-clock { font-variant-numeric: tabular-nums; color: var(--bad); font-weight: 700; display: none; align-items: center; gap: 6px; }
+    .lb-clock.on { display: inline-flex; }
+    .lb-clock .rec { width: 9px; height: 9px; border-radius: 50%; background: var(--bad); animation: rec 1.2s infinite; }
+    @keyframes rec { 50% { opacity: .25; } }
+    .prompter { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 12px; }
+    .tele { background: #0b0c0d; border: 1px solid var(--line2); border-radius: 10px; padding: 18px 22px; min-height: 340px; display: flex; flex-direction: column; gap: 12px; }
+    .tele.urgent { border-color: var(--bad); box-shadow: 0 0 0 1px var(--bad) inset; }
+    .tele .ptag { font-size: 13px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); }
+    .tele.urgent .ptag { color: var(--bad); }
+    .tele .ptext { font-size: clamp(24px, 2.6vw, 38px); line-height: 1.35; font-weight: 600; color: #fff; flex: 1; }
+    .tele.idle .ptext { color: var(--muted); font-size: 22px; font-weight: 400; }
+    .tele mark, .pqueue mark { background: none; color: var(--accent); }
+    .tele .pnote { font-size: 14px; color: var(--muted); border-left: 3px solid var(--line2); padding-left: 10px; }
+    .tele .pbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .tele .pbar .btn { font-size: 15px; padding: 8px 16px; }
+    .pqueue { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+    .pqueue li { background: var(--surface2); border: 1px solid var(--line); border-left: 3px solid var(--line2); border-radius: 6px; padding: 7px 10px; cursor: pointer; display: grid; gap: 2px; font-size: 13px; }
+    .pqueue li:hover { border-color: var(--line2); }
+    .pqueue li b { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .pqueue li.p3 { border-left-color: var(--bad); } .pqueue li.p2 { border-left-color: var(--accent); }
+    .pqueue li span { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .cheat { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; margin: 0; }
+    .cheat dt { color: var(--accent); font-weight: 600; } .cheat dd { margin: 0; color: var(--muted); }
+    .pz-ans { font-size: 20px; font-weight: 700; color: var(--ok); }
+    @media (max-width: 900px) { .prompter { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <nav class="side" id="nav">
+    <div class="brand">Giữ Thành Cổ Loa<small>Bảng quản trị</small></div>
+    <a href="#dashboard" data-tab="dashboard">Tổng quan <kbd>1</kbd></a>
+    <a href="#control" data-tab="control">Điều khiển <kbd>2</kbd></a>
+    <a href="#sim" data-tab="sim">Giả lập <kbd>3</kbd></a>
+    <a href="#players" data-tab="players">Người chơi <kbd>4</kbd></a>
+    <a href="#summary" data-tab="summary">Tổng kết <kbd>5</kbd></a>
+    <a href="#session" data-tab="session">Phiên <kbd>6</kbd></a>
+    <a href="#script" data-tab="script">Kịch bản live <kbd>7</kbd></a>
+    <div class="side-foot">
+      <div><span class="dot" id="f-ws"></span><span id="f-ws-t">Máy chủ…</span></div>
+      <div><span class="dot" id="f-tt"></span><span id="f-tt-t">TikTok: chưa kết nối</span></div>
+      <div><span class="dot" id="f-game"></span><span id="f-game-t">Game: chưa thấy</span></div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- live bar: what the game is doing right now + the buttons used most during a stream (on every tab) -->
+    <div class="livebar" id="livebar">
+      <div class="lb-state">
+        <div class="lb-title"><span class="dot" id="lb-dot"></span><b id="lb-level">Chưa thấy trang game</b><span class="muted" id="lb-sub"></span></div>
+        <div class="lb-wall"><span class="muted small">Thành</span><div class="lb-meter"><i id="lb-wall"></i></div><b class="num" id="lb-wall-v">—</b></div>
+      </div>
+      <div class="lb-acts">
+        <span class="lb-clock" id="lb-clock"><i class="rec"></i><span id="lb-clock-t">0:00:00</span></span>
+        <button class="btn golive" id="lb-golive" title="Xoá sạch, bắt đầu lại từ màn 1 và mở kịch bản">● BẬT LIVE</button>
+        <button class="btn" data-c="pause" id="lb-pause" title="Shift+P">Tạm dừng</button>
+        <button class="btn" data-c="wave" title="Shift+W">Wave tiếp</button>
+        <button class="btn danger" data-c="boss" title="Shift+B">Gọi boss</button>
+        <button class="btn" data-c="nothan" title="Shift+N">Nỏ Thần</button>
+        <button class="btn primary" data-c="golden" id="lb-golden" title="Shift+G">Giờ Vàng</button>
+      </div>
+    </div>
+    <div class="alert" id="alert-game" hidden>
+      <b>Trang game chưa mở.</b> Thêm <code id="game-url">http://localhost:3000/</code> làm <b>Browser Source 1080 × 1920</b> trong TikTok LIVE Studio / OBS (hoặc mở ở một tab) để điều khiển và xem số liệu.
+      <button class="btn xs" id="copy-url">Sao chép link</button>
+    </div>
+    <div class="alert warn" id="alert-tt" hidden>
+      <b>TikTok chưa kết nối</b> · người xem thật chưa vào được game. <a href="#control" class="btn xs">Kết nối ở tab Điều khiển</a>
+    </div>
+
+    <!-- ================= LIVE SCRIPT ================= -->
+    <section class="tab" id="tab-script">
+      <header class="top"><h1>Kịch bản live</h1><span class="meta">Đọc thẻ lớn · <kbd>Space</kbd> thẻ tiếp · <kbd>Backspace</kbd> thẻ trước</span></header>
+      <div class="prompter">
+        <div>
+          <div class="tele idle" id="p-root">
+            <div class="ptag" id="p-tag">Chưa live</div>
+            <div class="ptext" id="p-text"></div>
+            <div class="pnote" id="p-note" hidden></div>
+            <div class="pbar">
+              <button class="btn" id="p-prev">← Trước</button>
+              <button class="btn primary" id="p-next">Tiếp →</button>
+              <span class="muted small" id="p-counter"></span>
+              <span class="right"><button class="btn golive" id="p-golive">● BẬT LIVE</button></span>
+            </div>
+          </div>
+          <div class="card" style="margin-top:12px">
+            <h2>Sắp tới <span class="muted small" style="text-transform:none;letter-spacing:0">bấm để đọc ngay · đỏ = gấp</span></h2>
+            <ol class="pqueue" id="p-queue"></ol>
+          </div>
+        </div>
+        <div class="grid" style="align-content:start">
+          <div class="card">
+            <h2>Đang live</h2>
+            <dl class="kv" id="p-kv"></dl>
+          </div>
+          <div class="card" id="p-pz" hidden>
+            <h2>Câu đố đang chạy</h2>
+            <div id="p-pz-q" class="small"></div>
+            <div class="muted small" style="margin-top:6px">Đáp án (chỉ bạn thấy):</div>
+            <div class="pz-ans" id="p-pz-a"></div>
+          </div>
+          <div class="card">
+            <h2>Lệnh cho người xem</h2>
+            <dl class="cheat">
+              <dt>vào</dt><dd>nhập ngũ (vào cung = chọn lớp luôn)</dd>
+              <dt>kiếm…thích</dt><dd>đổi lớp: kiếm thương cung khiên phép y song võ thích</dd>
+              <dt>cứu</dt><dd>hồi sinh đồng đội đang dưỡng thương</dd>
+              <dt>nâng 3</dt><dd>nâng anh hùng ở ô số 3</dd>
+              <dt>tôi</dt><dd>xem lớp, cấp, số quái đã hạ</dd>
+              <dt>Thả tim</dt><dd>nạp Nỏ Thần</dd>
+              <dt>Follow</dt><dd>Cung Thủ miễn phí + hồi sinh 3</dd>
+              <dt>Share</dt><dd>sửa thành</dd>
+              <dt>Quà</dt><dd>tuyệt kỹ · ≥20 xu cấp II · ≥100 xu Tuyệt Kỹ</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DASHBOARD ================= -->
+    <section class="tab" id="tab-dashboard">
+      <header class="top"><h1>Tổng quan</h1><span class="meta" id="d-started"></span></header>
+      <div class="kpis" id="kpis"></div>
+      <div class="card" style="margin-bottom:12px">
+        <h2>Trạng thái game <span class="right small muted" id="g-age"></span></h2>
+        <div class="strip" id="g-strip"><span class="muted">Đang chờ game… mở trang game (Browser Source) để thấy số liệu.</span></div>
+      </div>
+      <div class="card" style="margin-bottom:12px">
+        <h2>Theo phút
+          <span class="right seg" id="range"><button data-r="30">30 phút</button><button data-r="60" class="on">60 phút</button><button data-r="0">Toàn bộ</button></span>
+        </h2>
+        <div class="charts" id="charts"></div>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>Phân bố lớp nhân vật <span class="right small muted" id="cls-total"></span></h2>
+          <div class="clsbar" id="cls-bar"></div>
+          <div class="legend" id="cls-legend"><span class="muted">Chưa có dữ liệu</span></div>
+          <h2 style="margin-top:16px">Top ủng hộ phiên này</h2>
+          <div id="d-donors"></div>
+        </div>
+        <div class="card">
+          <h2>Nhật ký sự kiện <span class="right"><label class="chk small" style="margin:0"><input type="checkbox" id="log-hide-likes"> Ẩn tim</label></span></h2>
+          <div class="log" id="log"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTROL ================= -->
+    <section class="tab" id="tab-control">
+      <header class="top"><h1>Điều khiển</h1><span class="meta">Bấm là gửi thẳng tới trang game · các nút hay dùng nhất ở thanh trên cùng</span>
+        <input type="search" id="cmd-filter" class="cmd-filter" placeholder="Tìm lệnh… (boss, mưa, đố, màn 7)" autocomplete="off"></header>
+      <div class="cmdgrid" id="cmdgrid">
+        <div class="grid">
+          <div class="card cmdcard">
+            <h2>Kết nối TikTok LIVE</h2>
+            <div class="status" id="tt-status">Chưa kết nối</div>
+            <div class="field"><label for="tt-user">Tên TikTok (không cần @)</label><input type="text" id="tt-user" placeholder="tenkenh" autocomplete="off"></div>
+            <div class="field"><label for="tt-key">Euler Stream API key (bắt buộc · tạo miễn phí ở <a href="https://www.eulerstream.com" target="_blank" rel="noopener">eulerstream.com</a>)</label><input type="password" id="tt-key" autocomplete="off"></div>
+            <div class="err" id="tt-err"></div>
+            <div class="btns"><button class="btn primary" id="tt-connect">Kết nối</button><button class="btn" id="tt-disconnect">Ngắt</button></div>
+            <p class="hint">Chỉ đọc sự kiện (bình luận, tim, quà, follow, share). Không bao giờ gửi tin nhắn thay bạn.</p>
+          </div>
+          <div class="card cmdcard">
+            <h2>Âm thanh <span class="right small muted">phát trong trang game / OBS</span></h2>
+            <label class="chk"><input type="checkbox" id="a-mute"> Tắt tiếng toàn bộ</label>
+            <div class="range"><span>Hiệu ứng</span><input id="a-sfx" type="range" min="0" max="100" value="70"><span id="a-sfx-v" class="num">70</span></div>
+            <div class="range"><span>Nhạc nền</span><input id="a-music" type="range" min="0" max="100" value="35"><span id="a-music-v" class="num">35</span></div>
+            <div class="lbl small muted" style="margin:10px 0 5px">Thử âm thanh</div>
+            <div class="btns">
+              <button class="btn" data-snd="coin">Xu</button><button class="btn" data-snd="giftBig">Quà lớn</button><button class="btn" data-snd="wave">Trống</button>
+              <button class="btn" data-snd="gong">Chiêng</button><button class="btn" data-snd="boss">Boss</button><button class="btn" data-snd="levelUp">Lên cấp</button>
+            </div>
+            <p class="hint">Nếu trình duyệt chặn âm thanh: bấm chuột 1 lần vào trang game. Trong OBS / LIVE Studio âm thanh tự bật.</p>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Nhịp trận</h2>
+          <div class="btns">
+            <button class="btn hotkey" data-c="wave" title="Shift+W">Wave tiếp<small>Shift+W</small></button>
+            <button class="btn hotkey danger" data-c="boss" title="Shift+B">Gọi boss theo lượt<small>Shift+B</small></button>
+            <button class="btn hotkey" data-c="nothan" title="Shift+N">Bắn Nỏ Thần<small>Shift+N</small></button>
+            <button class="btn hotkey primary" data-c="level" data-confirm="Kết thúc màn hiện tại và sang màn mới?">Màn tiếp<small>đổi bản đồ</small></button>
+            <button class="btn hotkey" data-c="pause" title="Shift+P">Tạm dừng / Tiếp<small>Shift+P</small></button>
+            <button class="btn hotkey primary" data-c="golden" title="Shift+G">Giờ Vàng x2 XP<small>10 phút · Shift+G</small></button>
+            <button class="btn hotkey" data-c="talk" data-k="anh hung noi chuyen">Anh hùng nói<small>một câu hợp lúc này</small></button>
+            <button class="btn hotkey" data-c="hardcore">Chế độ khó<small>quái +50% máu</small></button>
+            <button class="btn hotkey danger" data-c="reset" data-confirm="Kết thúc ván hiện tại và bắt đầu ván mới?">Ván mới<small>về màn 1</small></button>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Bản đồ (màn) <span class="right small muted">quân, cấp, anh hùng được giữ</span></h2>
+          <div class="mapgrid">
+            <button class="btn map" data-c="map" data-id="1" data-k="man 1" data-confirm="Đổi sang màn 1 · Làng Cổ Loa? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#7bc96f"></i><b>1</b> Làng Cổ Loa</button>
+            <button class="btn map" data-c="map" data-id="2" data-k="man 2" data-confirm="Đổi sang màn 2 · Đồng Lúa Chín? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#e6c25a"></i><b>2</b> Đồng Lúa Chín</button>
+            <button class="btn map" data-c="map" data-id="3" data-k="man 3" data-confirm="Đổi sang màn 3 · Rừng Trúc? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#3f9f5a"></i><b>3</b> Rừng Trúc</button>
+            <button class="btn map" data-c="map" data-id="4" data-k="man 4" data-confirm="Đổi sang màn 4 · Thung Lũng Sương? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#9fc2d8"></i><b>4</b> Thung Lũng Sương</button>
+            <button class="btn map" data-c="map" data-id="5" data-k="man 5" data-confirm="Đổi sang màn 5 · Đầm Lầy? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#5f9a86"></i><b>5</b> Đầm Lầy</button>
+            <button class="btn map" data-c="map" data-id="6" data-k="man 6" data-confirm="Đổi sang màn 6 · Núi Đá? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#b8a888"></i><b>6</b> Núi Đá</button>
+            <button class="btn map" data-c="map" data-id="7" data-k="man 7" data-confirm="Đổi sang màn 7 · Tuyết Sơn? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#dfeaf4"></i><b>7</b> Tuyết Sơn</button>
+            <button class="btn map" data-c="map" data-id="8" data-k="man 8" data-confirm="Đổi sang màn 8 · Hỏa Diệm Sơn? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#e2763c"></i><b>8</b> Hỏa Diệm Sơn</button>
+            <button class="btn map" data-c="map" data-id="9" data-k="man 9" data-confirm="Đổi sang màn 9 · Ma Giới? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#9a7ad8"></i><b>9</b> Ma Giới</button>
+            <button class="btn map" data-c="map" data-id="10" data-k="man 10" data-confirm="Đổi sang màn 10 · Cổng Quỷ? Quái trên sân sẽ bị xoá, quân về thành."><i style="background:#d8484a"></i><b>10</b> Cổng Quỷ</button>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Gọi boss <span class="right small muted">60% nổi giận · 25% liều mạng</span></h2>
+          <div class="btns">
+            <button class="btn danger" data-c="boss" data-id="0">Tướng Quỷ</button>
+            <button class="btn danger" data-c="boss" data-id="1">Ngư Tinh</button>
+            <button class="btn danger" data-c="boss" data-id="2">Xà Tinh</button>
+            <button class="btn danger" data-c="boss" data-id="3">Chằn Tinh</button>
+            <button class="btn danger" data-c="boss" data-id="4">Hồ Tinh</button>
+            <button class="btn danger" data-c="boss" data-id="5">Đại Bàng Tinh</button>
+            <button class="btn danger" data-c="boss" data-id="6">Mộc Tinh</button>
+            <button class="btn danger" data-c="boss" data-id="7">Thuồng Luồng</button>
+            <button class="btn danger" data-c="boss" data-id="8">Hắc Tướng Quỷ</button>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Wave tiếp với diễn biến</h2>
+          <div class="btns">
+            <button class="btn hotkey" data-c="twist" data-id="swift">Tốc biến<small>quái nhanh x1.5</small></button>
+            <button class="btn hotkey" data-c="twist" data-id="armored">Giáp trụ<small>60% quái giáp</small></button>
+            <button class="btn hotkey" data-c="twist" data-id="swarm">Bầy đàn<small>x2 quái yếu</small></button>
+            <button class="btn hotkey" data-c="twist" data-id="flyers">Trời đen kịt<small>quái bay</small></button>
+            <button class="btn hotkey" data-c="twist" data-id="elite">Tinh anh<small>quái vàng rơi xu</small></button>
+            <button class="btn hotkey" data-c="twist" data-id="horde">Đại quân<small>+50% quái</small></button>
+            <button class="btn hotkey" data-c="twist" data-id="captain">Đầu lĩnh<small>1 đầu lĩnh to</small></button>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Câu đố <span class="right small muted">ai đúng trước tung chiêu</span></h2>
+          <div class="btns">
+            <button class="btn" data-c="puzzle-math">Câu đố toán</button>
+            <button class="btn" data-c="puzzle-word">Sắp xếp chữ</button>
+            <button class="btn" data-c="puzzle" data-id="proverb">Tục ngữ</button>
+            <button class="btn" data-c="puzzle" data-id="riddle">Câu đố dân gian</button>
+            <button class="btn" data-c="puzzle" data-id="trivia">Đố vui</button>
+            <button class="btn danger" data-c="puzzle" data-id="hard">★ Câu đố khó (ngẫu nhiên)</button>
+            <button class="btn" data-c="puzzle" data-id="sequence">Dãy số</button>
+            <button class="btn" data-c="puzzle" data-id="missing">Điền chữ</button>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Sự kiện</h2>
+          <div class="btns">
+            <button class="btn hotkey" data-c="event" data-id="rain">Mưa lớn<small>quái chậm</small></button>
+            <button class="btn hotkey" data-c="event" data-id="charge">Voi Quỷ<small>voi lao vào thành</small></button>
+            <button class="btn hotkey" data-c="event" data-id="treasure">Kho báu<small>gõ "cướp"</small></button>
+            <button class="btn hotkey" data-c="event" data-id="meteor">Mưa sao băng<small>15 s</small></button>
+            <button class="btn hotkey" data-c="event" data-id="tornado">Gió lốc<small>đẩy lùi quái</small></button>
+            <button class="btn hotkey" data-c="event" data-id="festival">Lễ hội đèn lồng<small>x2 XP</small></button>
+            <button class="btn hotkey" data-c="event" data-id="fog">Sương mù<small>tầm bắn -30%</small></button>
+            <button class="btn hotkey" data-c="event" data-id="ambush">Quỷ đánh úp<small>cổng giữa đường</small></button>
+            <button class="btn hotkey" data-c="event" data-id="chestrun">Rương báu chạy<small>phá lấy XP</small></button>
+            <button class="btn hotkey" data-c="event" data-id="quake">Động đất<small>choáng quái</small></button>
+          </div>
+        </div>
+        <div class="card cmdcard">
+          <h2>Thử tuyệt kỹ <span class="right small muted">một chiến sĩ thử ra trận và tung chiêu ngay (có quái mồi nếu cần)</span></h2>
+          <div class="group">
+            <div class="lbl">Mức quà</div>
+            <div class="btns" id="ult-xu">
+              <button class="btn xs" data-xu="1">1 xu</button>
+              <button class="btn xs primary" data-xu="20">20 xu · II</button>
+              <button class="btn xs" data-xu="100">100 xu · Tuyệt Kỹ</button>
+              <button class="btn xs" data-xu="1000">1000 xu</button>
+            </div>
+          </div>
+          <div class="group">
+            <div class="lbl">Lớp</div>
+            <div class="btns">
+              <button class="btn hotkey" data-ult="kiem">Kiếm Sĩ<small>Kiếm Phong Bạo</small></button>
+              <button class="btn hotkey" data-ult="thuong">Thương Binh<small>Thương Long Đột</small></button>
+              <button class="btn hotkey" data-ult="cung">Cung Binh<small>Vạn Tiễn Xuyên Vân</small></button>
+              <button class="btn hotkey" data-ult="khien">Khiên Vệ<small>Thiết Bích Trấn Thủ</small></button>
+              <button class="btn hotkey" data-ult="phap">Pháp Sư<small>Lôi Hỏa Thiên Giáng</small></button>
+              <button class="btn hotkey" data-ult="y">Y Sư<small>Hồi Xuân Diệu Thủ</small></button>
+              <button class="btn hotkey" data-ult="song">Song Đao<small>Song Long Loạn Vũ</small></button>
+              <button class="btn hotkey" data-ult="vo">Võ Tăng<small>Kim Cang Phục Ma</small></button>
+              <button class="btn hotkey" data-ult="thich">Thích Khách<small>Ảnh Sát Vô Hình</small></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="hint" id="cmd-empty" hidden>Không có lệnh nào khớp.</p>
+    </section>
+
+    <!-- ================= SIMULATION ================= -->
+    <section class="tab" id="tab-sim">
+      <header class="top"><h1>Giả lập người xem</h1><span class="meta">Test không cần LIVE · người xem giả có id <code>sim:</code>, không lưu tiến độ, được tính riêng trong tổng kết</span></header>
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>Người xem</h2>
+          <div class="group">
+            <div class="lbl">Tham gia (gõ "vào")</div>
+            <div class="btns">
+              <button class="btn" data-sim="join" data-n="1">+1 người</button>
+              <button class="btn" data-sim="join" data-n="10">+10</button>
+              <button class="btn" data-sim="join" data-n="50">+50</button>
+              <button class="btn" data-sim="join" data-n="200">+200</button>
+              <button class="btn" data-sim="veteran">+1 Đại Tướng</button>
+              <button class="btn" data-sim="member" data-n="5">5 lượt vào phòng</button>
+            </div>
+          </div>
+          <div class="group">
+            <div class="lbl">Chọn lớp (bình luận)</div>
+            <div class="btns">
+              <button class="btn" data-sim="cmd" data-t="kiếm" data-n="5">5x "kiếm"</button>
+              <button class="btn" data-sim="cmd" data-t="thương" data-n="5">5x "thương"</button>
+              <button class="btn" data-sim="cmd" data-t="cung" data-n="5">5x "cung"</button>
+              <button class="btn" data-sim="cmd" data-t="khiên" data-n="5">5x "khiên"</button>
+              <button class="btn" data-sim="cmd" data-t="phép" data-n="5">5x "phép"</button>
+              <button class="btn" data-sim="cmd" data-t="y" data-n="5">5x "y"</button>
+              <button class="btn" data-sim="cmd" data-t="song" data-n="5">5x "song"</button>
+              <button class="btn" data-sim="cmd" data-t="võ" data-n="5">5x "võ"</button>
+              <button class="btn" data-sim="cmd" data-t="thích" data-n="5">5x "thích"</button>
+              <button class="btn" data-sim="classmix" data-n="30">30 lớp ngẫu nhiên</button>
+            </div>
+          </div>
+          <div class="group">
+            <div class="lbl">Bình luận &amp; lệnh</div>
+            <div class="btns">
+              <button class="btn" data-sim="chat" data-n="15">15 bình luận</button>
+              <button class="btn" data-sim="cmd" data-t="tôi" data-n="10">10x "tôi"</button>
+              <button class="btn" data-sim="cmd" data-t="cứu" data-n="3">3x "cứu"</button>
+              <button class="btn" data-sim="cmd" data-t="nâng 3" data-n="5">5x "nâng 3"</button>
+            </div>
+          </div>
+          <div class="group">
+            <div class="lbl">Tương tác</div>
+            <div class="btns">
+              <button class="btn" data-sim="like" data-n="60">60 tim</button>
+              <button class="btn" data-sim="follow">Follow</button>
+              <button class="btn" data-sim="share">Share</button>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h2>Quà <span class="right small muted">mỗi quà = tuyệt kỹ của người tặng (~7 giây)</span></h2>
+            <div class="btns">
+              <button class="btn" data-sim="gift" data-d="1" data-name="Hoa Hồng">Hoa Hồng · 1 xu<small>tuyệt kỹ x1</small></button>
+              <button class="btn" data-sim="gift" data-d="5" data-name="Kẹo">Kẹo · 5 xu<small>x1.6</small></button>
+              <button class="btn" data-sim="gift" data-d="20" data-name="Bánh Donut">Donut · 20 xu<small>II · x2.2</small></button>
+              <button class="btn" data-sim="gift" data-d="100" data-name="Mũ">Mũ · 100 xu<small>Tuyệt Kỹ · x2.8</small></button>
+              <button class="btn primary" data-sim="gift" data-d="1000" data-name="Sư Tử">Sư Tử · 1000 xu<small>x3.7</small></button>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Bot &amp; bình luận tự gõ</h2>
+            <label class="chk"><input type="checkbox" id="bots"> Bot tự chơi (demo liên tục)</label>
+            <label class="chk"><input type="checkbox" id="bot-gifts"> Bot cũng tặng quà (mỗi quà = 1 tuyệt kỹ ~7 giây)</label>
+            <div class="row" style="margin-top:8px"><input type="text" id="c-name" placeholder="Tên" value="Bạn" style="max-width:140px"><input type="text" id="c-text" placeholder="Bình luận / đáp án"><button class="btn" id="c-send">Gửi</button></div>
+            <div class="err" id="c-err"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLAYERS ================= -->
+    <section class="tab" id="tab-players">
+      <header class="top"><h1>Người chơi</h1><span class="meta" id="p-meta">Chưa nhận danh sách từ game</span></header>
+      <div class="card" style="margin-bottom:12px">
+        <div class="toolbar">
+          <input type="search" id="p-search" placeholder="Tìm tên hoặc id…">
+          <select id="p-cls" style="max-width:160px"><option value="">Mọi lớp</option></select>
+          <label class="chk small" style="margin:0"><input type="checkbox" id="p-alive"> Chỉ đang sống</label>
+          <span class="muted small" id="p-count" style="margin-left:auto"></span>
+        </div>
+        <div class="tblwrap"><table id="p-table"><thead></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h2>Danh sách cấm <span class="right small muted">sự kiện của người bị cấm bị chặn trước khi tới game</span></h2>
+        <div class="row" style="margin-bottom:8px;max-width:520px"><input type="text" id="ban-id" placeholder="ID người xem"><input type="text" id="ban-name" placeholder="Tên (tuỳ chọn)"><button class="btn danger" id="ban-add">Cấm</button></div>
+        <div id="bans"></div>
+      </div>
+    </section>
+
+    <!-- ================= SUMMARY ================= -->
+    <section class="tab" id="tab-summary">
+      <header class="top"><h1>Tổng kết phiên</h1><span class="meta" id="s-meta"></span></header>
+      <div class="card" style="margin-bottom:12px">
+        <div class="btns">
+          <a class="btn" href="/admin/api/session.json" download>Tải JSON</a>
+          <a class="btn" href="/admin/api/session.csv" download>Tải CSV</a>
+          <button class="btn primary" id="copy-recap">Sao chép tóm tắt</button>
+        </div>
+      </div>
+      <div id="s-body"></div>
+      <div class="card" style="margin-top:12px">
+        <h2>Tóm tắt để dán <span class="right small muted">chỉ tính số liệu thật (không tính giả lập)</span></h2>
+        <textarea class="recap" id="recap" readonly></textarea>
+      </div>
+    </section>
+
+    <!-- ================= SESSION ================= -->
+    <section class="tab" id="tab-session">
+      <header class="top"><h1>Phiên</h1><span class="meta">Một phiên = một buổi LIVE</span></header>
+      <div class="grid cols-2" style="margin-bottom:12px">
+        <div class="card">
+          <h2>Phiên hiện tại</h2>
+          <dl class="kv" id="cur-kv"></dl>
+          <div class="btns" style="margin-top:12px">
+            <button class="btn danger" id="clear-session">Xoá phiên &amp; bắt đầu mới</button>
+          </div>
+          <p class="hint">Lưu phiên hiện tại vào lịch sử, xoá thống kê, và game xoá toàn bộ người xem / chiến sĩ / anh hùng rồi tập hợp lại.</p>
+        </div>
+        <div class="card">
+          <h2>Bảng xếp hạng</h2>
+          <div class="btns"><button class="btn danger" id="reset-today">Đặt lại bảng xếp hạng hôm nay</button></div>
+          <p class="hint">Đưa XP hôm nay và quà hôm nay của mọi người về 0. XP tổng và chuỗi ngày không đổi.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Lịch sử phiên <span class="right"><button class="btn xs" id="hist-refresh">Tải lại</button></span></h2>
+        <div class="tblwrap"><table id="hist"><thead><tr><th>Bắt đầu</th><th class="r">Thời lượng</th><th class="r">Người xem</th><th class="r">Xu</th><th class="r">Wave cao nhất</th><th class="r">Số ván</th><th></th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<dialog id="confirm">
+  <h3 id="confirm-title">Xác nhận</h3>
+  <p id="confirm-text"></p>
+  <div class="btns"><button class="btn" value="no" id="confirm-no">Huỷ</button><button class="btn danger" value="yes" id="confirm-yes">Đồng ý</button></div>
+</dialog>
+
+<dialog id="past" class="wide">
+  <h3 id="past-title">Phiên cũ</h3>
+  <div class="btns" id="past-links" style="justify-content:flex-start;margin-bottom:12px"></div>
+  <div id="past-body"></div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="past-close">Đóng</button></div>
+</dialog>
+
+<div class="toasts" id="toasts"></div>
+
+<script type="module" src="/js/admin.js"></script>
+</body>
+</html>

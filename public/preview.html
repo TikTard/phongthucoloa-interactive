@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Sprite preview</title>
+  <style>
+    body { margin: 0; background: #2b3a2a; color: #eee; font: 13px "Segoe UI", Arial, sans-serif; }
+    .grid { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; }
+    .item { background: #1b2a1a; border-radius: 8px; padding: 6px; text-align: center; }
+    canvas { image-rendering: pixelated; display: block; margin: 0 auto 4px; }
+    .bar { padding: 8px 10px; position: sticky; top: 0; background: #111; z-index: 1; }
+    input { width: 260px; }
+  </style>
+</head>
+<body>
+  <div class="bar">Filter: <input id="f" placeholder="hero_ / enemy_ / tile_ ..."> Zoom: <input id="z" type="range" min="1" max="8" value="3" style="width:120px"></div>
+  <div class="grid" id="g"></div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const f = document.getElementById('f'), z = document.getElementById('z'), g = document.getElementById('g');
+    f.value = params.get('f') || '';
+    z.value = params.get('z') || 3;
+    let manifest = {}, imgs = {};
+    fetch('assets/sprites/manifest.json?' + Date.now()).then(r => r.json()).then(m => {
+      manifest = m;
+      for (const k of Object.keys(m)) { const i = new Image(); i.src = `assets/sprites/${k}.png?${Date.now()}`; imgs[k] = i; }
+      build();
+    });
+    function build() {
+      g.innerHTML = '';
+      const zoom = +z.value;
+      for (const [k, m] of Object.entries(manifest)) {
+        if (f.value && !k.includes(f.value)) continue;
+        const d = document.createElement('div'); d.className = 'item';
+        const strip = document.createElement('canvas'); strip.width = m.w * m.frames; strip.height = m.h;
+        strip.style.width = (m.w * m.frames * zoom) + 'px';
+        const anim = document.createElement('canvas'); anim.width = m.w; anim.height = m.h;
+        anim.style.width = (m.w * zoom) + 'px';
+        d.append(anim, strip, Object.assign(document.createElement('div'), { textContent: `${k} (${m.w}x${m.h}x${m.frames})` }));
+        g.append(d);
+        const img = imgs[k];
+        const draw = () => { strip.getContext('2d').drawImage(img, 0, 0); };
+        img.complete ? draw() : img.addEventListener('load', draw);
+        let fr = 0;
+        const names = Object.keys(m.anims || {});
+        setInterval(() => {
+          const a = m.anims?.[names[0]] || [0, m.frames - 1];
+          const n = a[1] - a[0] + 1;
+          const c = anim.getContext('2d'); c.clearRect(0, 0, m.w, m.h);
+          c.drawImage(img, (a[0] + (fr++ % n)) * m.w, 0, m.w, m.h, 0, 0, m.w, m.h);
+        }, 180);
+      }
+    }
+    f.oninput = build; z.oninput = build;
+  </script>
+</body>
+</html>

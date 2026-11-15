@@ -1,0 +1,276 @@
+{
+ "schema": "codeart2d.pixelspec.v1",
+ "name": "enemy_bat",
+ "canvas": [
+  32,
+  24
+ ],
+ "anchor_px": [
+  16,
+  22
+ ],
+ "palette": {
+  "k": "#241622",
+  "A": "#1a1022",
+  "B": "#3a1f4e",
+  "C": "#6a3a9a",
+  "D": "#a878e0",
+  "q": "#4a1020",
+  "r": "#8a2030",
+  "R": "#c84040",
+  "y": "#ffe25a",
+  "Y": "#fff8c0",
+  "H": "#e8dcc0",
+  "h": "#a89478",
+  "b": "#5a4a3a"
+ },
+ "variants": {
+  "_": {},
+  "fire": {
+   "A": "#1a1022",
+   "B": "#4a1020",
+   "C": "#8a2010",
+   "D": "#e05a20",
+   "q": "#8a2010",
+   "r": "#e05a20",
+   "R": "#ffb040",
+   "Y": "#fff0a0",
+   "y": "#ffb040"
+  }
+ },
+ "outline": {
+  "mode": "solid",
+  "color": "k"
+ },
+ "poses": {
+  "body": [
+   "................................",
+   "................................",
+   "................................",
+   "................................",
+   "................................",
+   "................................",
+   "................................",
+   "................................",
+   "...............H.....H..........",
+   "...............hb...bh..........",
+   "................BCDDCB..........",
+   "...............BCDDDDCB.........",
+   "...............CDyBCYyC.........",
+   "...............BCCCCCCCB........",
+   "...............BCqHqqHqB........",
+   "..............ABCCqqqCBA........",
+   ".............ABCDDCCCCBA........",
+   ".............ABCDCCCCCBA........",
+   "..............ABCCCCCBA.........",
+   "...............ABBBBBA..........",
+   "...............h..h.h...........",
+   "................................",
+   "................................",
+   "................................"
+  ],
+  "near_up": [
+   ".D............",
+   ".CDD..........",
+   ".rRCDD........",
+   ".rRRRCD.......",
+   ".qrCRRCD......",
+   "..qrCRRCD.....",
+   "...rrCRRCD....",
+   "...qrrCRRCD...",
+   "....q.qrCRCD..",
+   ".......qqrrCD.",
+   "..........qrCD"
+  ],
+  "far_up": [
+   "............",
+   "..........CC",
+   "........CCBr",
+   ".......CBrrr",
+   "......CBrrBq",
+   ".....CBrrBqA",
+   "....CBrrBqq.",
+   "...CBrrBqqA.",
+   "..CBrBqA.A..",
+   ".CBqqAA.....",
+   "CBqA........"
+  ],
+  "near_mid": [
+   "DD............",
+   "rCDDD.........",
+   "rRRCCDDDDDDDDD",
+   "qrRRRrCRRRRRCC",
+   ".qrRrqrCrRRRrC",
+   "..qrq..qCrrRrC",
+   "...q.....qqrCC"
+  ],
+  "far_mid": [
+   "............",
+   ".........CCC",
+   "CCCCCCCCCBBr",
+   "BBrrrrrBqrrr",
+   "BqrrrqBqAqrq",
+   "BqrqqBA..AqA",
+   "BBqAA.....A."
+  ],
+  "near_down": [
+   "..........qrCD",
+   ".......qqrrCD.",
+   "....q.qrCRCD..",
+   "...qrrCRRCD...",
+   "...rrCRRCD....",
+   "..qrCRRCD.....",
+   ".qrCRRCD......",
+   ".rRRRCD.......",
+   ".rRCDD........",
+   ".CDD..........",
+   ".D............"
+  ],
+  "far_down": [
+   "CBqA........",
+   ".CBqqAA.....",
+   "..CBrBqA.A..",
+   "...CBrrBqqA.",
+   "....CBrrBqq.",
+   ".....CBrrBqA",
+   "......CBrrBq",
+   ".......CBrrr",
+   "........CCBr",
+   "..........CC",
+   "............"
+  ],
+  "near_midup": [
+   ".......DD.....",
+   ".....DDCC.....",
+   "..DDDCCRRCDDDD",
+   ".CCRRRRRRRRCCC",
+   "..qrrCrRRRRrrC",
+   "....q.qrCrrrrC",
+   ".........qqqCC"
+  ],
+  "far_midup": [
+   ".....CC.....",
+   ".....BBCC...",
+   "CCCCBrrBBCCC",
+   "BBBrrrrrrrrB",
+   "BqqrrrrqBqqA",
+   "BqqqqBqA.A..",
+   "BBAAA......."
+  ]
+ },
+ "layers": [
+  {
+   "name": "far",
+   "z": 0,
+   "origin": [
+    0,
+    0
+   ],
+   "rows": "far_up"
+  },
+  {
+   "name": "body",
+   "z": 1,
+   "origin": [
+    0,
+    0
+   ],
+   "rows": "body"
+  },
+  {
+   "name": "near",
+   "z": 2,
+   "origin": [
+    0,
+    0
+   ],
+   "rows": "near_up"
+  }
+ ],
+ "frames": [
+  {
+   "name": "walk_0",
+   "layers": {
+    "far": {
+     "rows": "far_up",
+     "dx": 18,
+     "dy": 3
+    },
+    "near": {
+     "rows": "near_up",
+     "dx": 1,
+     "dy": 4
+    },
+    "body": {
+     "dy": 1
+    }
+   }
+  },
+  {
+   "name": "walk_1",
+   "layers": {
+    "far": {
+     "rows": "far_mid",
+     "dx": 18,
+     "dy": 10
+    },
+    "near": {
+     "rows": "near_mid",
+     "dx": 1,
+     "dy": 11
+    },
+    "body": {
+     "dy": 0
+    }
+   }
+  },
+  {
+   "name": "walk_2",
+   "layers": {
+    "far": {
+     "rows": "far_down",
+     "dx": 18,
+     "dy": 11
+    },
+    "near": {
+     "rows": "near_down",
+     "dx": 1,
+     "dy": 12
+    },
+    "body": {
+     "dy": -1
+    }
+   }
+  },
+  {
+   "name": "walk_3",
+   "layers": {
+    "far": {
+     "rows": "far_midup",
+     "dx": 18,
+     "dy": 10
+    },
+    "near": {
+     "rows": "near_midup",
+     "dx": 1,
+     "dy": 11
+    },
+    "body": {
+     "dy": 0
+    }
+   }
+  }
+ ],
+ "clips": {
+  "walk": {
+   "frames": [
+    "walk_0",
+    "walk_1",
+    "walk_2",
+    "walk_3"
+   ],
+   "duration_ms": 91,
+   "loop": true
+  }
+ }
+}

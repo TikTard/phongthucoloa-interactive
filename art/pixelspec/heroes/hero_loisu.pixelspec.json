@@ -1,0 +1,413 @@
+{
+  "schema": "codeart2d.pixelspec.v1",
+  "name": "hero_loisu",
+  "canvas": [48, 48],
+  "anchor_px": [24, 46],
+  "palette": {
+    "k": "#241622",
+    "S": "#b8735a",
+    "s": "#e3a27f",
+    "f": "#f6cfac",
+    "h": "#2b1d2a",
+    "H": "#45304a",
+    "w": "#f4ecd8",
+    "q": "#94673f",
+    "c": "#cdbfa6",
+    "C": "#f4ecd8",
+    "m": "#3e2a22",
+    "n": "#6a4630",
+    "N": "#94673f",
+    "t": "#6a4630",
+    "T": "#94673f",
+    "g": "#a4acc0",
+    "G": "#e0e6f0",
+    "b": "#6a4630",
+    "p": "#6a3a9a",
+    "P": "#a878e0",
+    "e": "#e0c8ff"
+  },
+  "variants": {
+    "1": {"q": "#94673f", "c": "#cdbfa6", "C": "#f4ecd8", "m": "#3e2a22", "n": "#6a4630", "N": "#94673f", "t": "#6a4630", "T": "#94673f"},
+    "2": {"q": "#1f3f3a", "c": "#2f6b55", "C": "#4f9a72", "m": "#3e2a22", "n": "#94673f", "N": "#c4955e", "t": "#94673f", "T": "#c4955e"},
+    "3": {"q": "#1e2340", "c": "#2f3a6e", "C": "#4a64a8", "m": "#3a3e52", "n": "#6a7088", "N": "#a4acc0", "t": "#a4acc0", "T": "#e0e6f0"},
+    "4": {"q": "#6e1e24", "c": "#a8322e", "C": "#d8553a", "m": "#6a7088", "n": "#a4acc0", "N": "#e0e6f0", "t": "#a8701e", "T": "#e0a838"},
+    "5": {"q": "#a8322e", "c": "#d8553a", "C": "#f08a5a", "m": "#a8701e", "n": "#e0a838", "N": "#f8dc7a", "t": "#e0a838", "T": "#f8dc7a"}
+  },
+  "outline": {"mode": "solid", "color": "k"},
+  "poses": {
+    "core": [
+      ".....ffffsS.......",
+      "...fffffsssSS.....",
+      "..fffffsssssSS....",
+      ".gfffffssssssSS...",
+      ".gGffffsssssssS...",
+      ".gGgfffsssssssSS..",
+      ".gGgsffSSSffssss..",
+      ".gGgSffffffffsss..",
+      ".gGgSffGGGffGGGs..",
+      ".gGgSffGhhfffhhs..",
+      ".gGgSfffhwfffhwsSS",
+      ".gGgSsffSSssGGGGS.",
+      "..gGsssgGGGGGGGG..",
+      "..gGsgGGGGSSGGG...",
+      "...gGssGGGGGGGGG..",
+      "...nNNNNNNNNnn....",
+      ".nNNNNNNnnnnnnn...",
+      "nNNNNNNNnnnnnnnq..",
+      "nnNNNNNNnnnnnnnn..",
+      "nnnnnnnnnnnnnnnn..",
+      ".cCCCCCccccccqq...",
+      ".cCCCCCccccccqq...",
+      ".tTTTTTTTTTtttt...",
+      ".cCCCCCccccccqq..."
+    ],
+    "legs": [
+      "...cCCCCCccccTcqqq..",
+      "..cCCCCCcccccTcqqq..",
+      "..cCCCCCcccccTcqqq..",
+      "..cCCCCccccccTcqqq..",
+      ".cCCCCCccccccTcqqqq.",
+      ".cCCCCCccccccTcqqqq.",
+      ".cCCCCcccccccTcqqqq.",
+      ".cCCCCcccccccTcqqqq.",
+      "cCCCCCcccccccTcqqqqq",
+      "cCCCCCcccccccTcqqqqq",
+      "cCCCCccccccccTcqqqqq",
+      "tTTTTTTTTTTTTTtttttt",
+      "tttttttttttttttttttt",
+      "....bSSb..bSSSb.....",
+      "...bSSSb..bSSSSb....",
+      "...bbbbbb.bbbbbbb..."
+    ],
+    "beard_a": [
+      "gGGGGGGGGGG",
+      "gGGGGGGGGGg",
+      "gGGGGGGGGg.",
+      ".gGGGGGGGg.",
+      ".gGGGGGGg..",
+      "..gGGGGGg..",
+      "..gGGGGg...",
+      "...gGGGg...",
+      "...gGGg....",
+      "....gGg....",
+      "....gG....."
+    ],
+    "beard_b": [
+      "gGGGGGGGGGG",
+      "gGGGGGGGGGg",
+      "gGGGGGGGGg.",
+      ".gGGGGGGGg.",
+      ".gGGGGGGg..",
+      "..gGGGGGg..",
+      "...gGGGGg..",
+      "....gGGGg..",
+      "....gGGg...",
+      ".....gGg...",
+      ".....gG...."
+    ],
+    "hair_a": [".gG.", "gGG.", "gGg.", "gGgg", "gGgg", "gGgg", "gGgg", "gGgg", "gGgg", "gGgg", "gGgg", "gGgg", "gGgg", "gGg.", ".gg."],
+    "hair_b": ["..gG.", ".gGG.", ".gGg.", ".gGgg", ".gGgg", ".gGgg", ".gGgg", ".gGgg", ".gGgg", "gGgg.", "gGgg.", "gGgg.", "gGgg.", "gGg..", ".gg.."],
+    "near": [
+      "...cCCCcq",
+      "..cCCCcq.",
+      ".cCCCcq..",
+      "cCCCcq...",
+      "tTTt....."
+    ],
+    "near_b": [
+      "....cCCCcq",
+      "...cCCCcq.",
+      "..cCCCcq..",
+      ".cCCCcq...",
+      "tTTt......"
+    ],
+    "farm": [
+      "cq.....",
+      "cqq....",
+      ".cqq...",
+      ".cqtt..",
+      "...fsSS",
+      "....sSS"
+    ],
+    "farm_up": [
+      "cqq.fsSS",
+      "cqqttsSS",
+      ".cqt...."
+    ],
+    "staff": [".SSb.", "S...b", "SeP.b", "bPp.b", ".b.Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "..bSb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb"],
+    "staff_flash": [".SSb.", "S...b", "See.b", "beP.b", ".b.Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "..bSb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb", "...Sb"],
+    "spark_a": [
+      ".e........",
+      "Pe........",
+      "P.........",
+      "..........",
+      "........e.",
+      "........eP",
+      ".........P"
+    ],
+    "spark_b": [
+      "........e.",
+      "........eP",
+      ".........P",
+      "..........",
+      "Pe........",
+      ".e........",
+      "P........."
+    ],
+    "spark_big": [
+      ".e.........e.",
+      "Pe.........eP",
+      ".P........Pe.",
+      "ep..........e",
+      ".P.........P."
+    ],
+    "fx_bolt": [
+      ".......pPGeP.",
+      ".......pPGeP.",
+      "......pPGeP..",
+      "......pPGeP..",
+      ".....pPGeP...",
+      ".....pPGeP...",
+      "......pPGeP..",
+      "......pPGePPe",
+      "......pPGePeP",
+      ".......pPGeP.",
+      "........pPGeP",
+      "........pPGeP",
+      ".......pPGeP.",
+      ".......pPGeP.",
+      "......pPGeP..",
+      ".....pPGeP...",
+      ".....pPGeP...",
+      "....pPGeP....",
+      "....pPGeP....",
+      ".....pPGeP...",
+      "...eP.pPGeP..",
+      "..e...pPGeP..",
+      "......pPGeP..",
+      ".......pPGeP.",
+      "......pPGeP..",
+      "......pPGeP..",
+      "......pPGeP..",
+      ".....pPGeP...",
+      "....pPGeP....",
+      "....pPGeP....",
+      "....pPGeP....",
+      ".....pPGeP...",
+      ".....pPGeP...",
+      ".....pPGeP...",
+      "......pPGeP..",
+      "......pPGeP..",
+      "......pPGeP..",
+      "......pPGeP..",
+      "..pP..GG...Pp",
+      "...PeeGGeeP..",
+      "...pPeGGGGePp",
+      ".peeGGGGGeeP.",
+      "pPeeeeeeeeePp"
+    ],
+    "fx_fade": [
+      ".....Pe....",
+      ".....Pe....",
+      "......Pe...",
+      "......Pe...",
+      "......Pe...",
+      ".......Pe..",
+      ".......Pe..",
+      "......Pe...",
+      "......Pe...",
+      ".....Pe....",
+      "....Pe.....",
+      "...........",
+      "...........",
+      "...Pe......",
+      "....Pe.....",
+      ".....Pe....",
+      ".....Pe....",
+      ".....Pe....",
+      "......Pe...",
+      ".....Pe....",
+      ".....Pe....",
+      ".....Pe....",
+      "....Pe.....",
+      "...........",
+      "...Pe......",
+      "...Pe......",
+      "....Pe.....",
+      "....Pe.....",
+      "....Pe.....",
+      ".....Pe....",
+      ".....Pe....",
+      ".....Pe....",
+      ".....Pe....",
+      "....Pe.....",
+      "....Pe.....",
+      "...........",
+      ".pP......Pp",
+      "pP.PPP...p."
+    ],
+    "fx_res": [
+      "....e....",
+      "...eP....",
+      "....P....",
+      ".........",
+      ".........",
+      "pP.....Pp"
+    ]
+  },
+  "layers": [
+    {
+      "name": "hair",
+      "z": 0,
+      "origin": [15, 9],
+      "rows": "hair_a"
+    },
+    {
+      "name": "farm",
+      "z": 1,
+      "origin": [31, 24],
+      "rows": "farm"
+    },
+    {
+      "name": "staff",
+      "z": 1,
+      "origin": [34, 6],
+      "rows": "staff"
+    },
+    {
+      "name": "spark",
+      "z": 1,
+      "origin": [32, 4],
+      "rows": "spark_a"
+    },
+    {
+      "name": "legs",
+      "z": 2,
+      "origin": [14, 30],
+      "rows": "legs"
+    },
+    {
+      "name": "core",
+      "z": 3,
+      "origin": [16, 6],
+      "rows": "core"
+    },
+    {
+      "name": "beard",
+      "z": 4,
+      "origin": [21, 20],
+      "rows": "beard_a"
+    },
+    {
+      "name": "near",
+      "z": 5,
+      "origin": [14, 26],
+      "rows": "near"
+    },
+    {
+      "name": "fx",
+      "z": 6,
+      "origin": [34, 1],
+      "rows": "fx_bolt"
+    }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "layers": {
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_1",
+      "layers": {
+        "hair": {"dy": 1},
+        "farm": {"dy": 1},
+        "spark": {"rows": "spark_b"},
+        "core": {"dy": 1},
+        "beard": {"dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_2",
+      "layers": {
+        "hair": {"rows": "hair_b", "dx": -1, "dy": 1},
+        "farm": {"dy": 1},
+        "core": {"dy": 1},
+        "beard": {"rows": "beard_b", "dy": 1},
+        "near": {"dy": 1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "idle_3",
+      "layers": {
+        "hair": {"rows": "hair_b", "dx": -1},
+        "spark": {"rows": "spark_b"},
+        "beard": {"rows": "beard_b"},
+        "near": {"rows": "near_b", "dx": -1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_0",
+      "layers": {
+        "hair": {"dx": -1},
+        "farm": {"rows": "farm_up", "dx": -1, "dy": -2},
+        "staff": {"dy": -3},
+        "spark": {"rows": "spark_big", "dx": -2, "dy": -3},
+        "core": {"dx": -1},
+        "beard": {"rows": "beard_b", "dx": -1},
+        "near": {"dx": -1},
+        "fx": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_1",
+      "layers": {
+        "farm": {"rows": "farm_up", "dx": -1, "dy": -3},
+        "staff": {"rows": "staff_flash", "dy": -4},
+        "spark": {"hidden": true}
+      }
+    },
+    {
+      "name": "attack_2",
+      "layers": {
+        "hair": {"rows": "hair_b", "dx": -1},
+        "farm": {"rows": "farm_up", "dx": -1, "dy": -3},
+        "staff": {"dy": -4},
+        "spark": {"hidden": true},
+        "beard": {"rows": "beard_b"},
+        "fx": {"rows": "fx_fade", "dx": 2, "dy": 5}
+      }
+    },
+    {
+      "name": "attack_3",
+      "layers": {
+        "staff": {"dy": -1},
+        "spark": {"rows": "spark_b", "dy": -1},
+        "near": {"rows": "near_b", "dx": -1},
+        "fx": {"rows": "fx_res", "dx": 3, "dy": 37}
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": ["idle_0", "idle_1", "idle_2", "idle_3"],
+      "duration_ms": 200,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        "attack_0",
+        "attack_1",
+        "attack_2",
+        "attack_3"
+      ],
+      "duration_ms": [110, 70, 80, 90],
+      "loop": false
+    }
+  }
+}
